@@ -1,0 +1,13 @@
+<p>secured-settings works!</p>
+<div *ngIf="newPassword">
+        <h2>{{ newPassword }}</h2>
+        <div>
+            <label>Passwort:  
+                <input [(ngModel)]="newPassword"/>
+            </label>
+        </div>
+        <button (click)="setNewPassword">Passwort ändern</button>
+     
+</div>  
+
+<div *ngIf="tmp">{{tmp}}</div>   
