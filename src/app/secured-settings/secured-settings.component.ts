@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SettingsAuthenticationService } from '../settings-authentication.service';
 
 @Component({
@@ -8,8 +8,7 @@ import { SettingsAuthenticationService } from '../settings-authentication.servic
 })
 export class SecuredSettingsComponent implements OnInit {
 
-  newPassword: string = "1234";
-  tmp: string;
+  @Input() newPassword : string;
 
   constructor(private securedsetting: SettingsAuthenticationService) {
 
@@ -17,10 +16,13 @@ export class SecuredSettingsComponent implements OnInit {
 
    setNewPassword(): void {
       this.securedsetting.setPassword(this.newPassword);
-      this.tmp = this.securedsetting.getPassword();
+      //this.tmp = this.securedsetting.getPassword();
   }
 
   ngOnInit() {
+    this.securedsetting.getPassword().subscribe(t => this.newPassword = t);
+    //this.securedsetting.setPassword("4444");
+    //this.newPassword = this.securedsetting.getPassword();
   }
 
 }

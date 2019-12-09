@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SettingsAuthenticationService } from '../settings-authentication.service';
-import { TouchSequence } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-settings',
@@ -10,7 +9,7 @@ import { TouchSequence } from 'selenium-webdriver';
 })
 export class SettingsComponent implements OnInit {
 
-  userInput: string = "1111";
+  @Input() userInput : string;
 
   constructor(private settingsauthentication: SettingsAuthenticationService,
               private router: Router, 
@@ -22,7 +21,7 @@ export class SettingsComponent implements OnInit {
   }
 
   ngOnInit() {
-  
+      this.settingsauthentication.getPassword().subscribe(t => this.userInput = t);
   }
 
 }
