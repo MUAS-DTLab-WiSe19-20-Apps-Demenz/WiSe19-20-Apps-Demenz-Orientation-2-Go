@@ -6,7 +6,8 @@ import { Observable, of } from 'rxjs';
 })
 export class SettingsAuthenticationService {
 
-  password: string = "5111";
+  password: string;
+  initial: boolean = true;
 
   checkPassword(password: string): boolean {
     return this.password == password;
@@ -14,10 +15,21 @@ export class SettingsAuthenticationService {
 
   setPassword(password: string): void {
     this.password = password;
+    this.initial = false;
   }
 
-  getPassword() : Observable<string> {
+  getPassword() : Observable<string> { 
     return of(this.password);
+  }
+
+  isInitial() : Observable<boolean> {
+    if(this.password == null)
+      return of(true);
+    return of(false);
+  }
+
+  getPasswordString() : string { 
+    return this.password;
   }
 
   constructor() { }

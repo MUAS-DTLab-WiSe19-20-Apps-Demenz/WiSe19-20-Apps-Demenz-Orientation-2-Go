@@ -5,6 +5,8 @@ import { SettingsComponent } from './settings/settings.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { SecuredSettingsComponent } from './secured-settings/secured-settings.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { HomeAdressComponent } from './home-adress/home-adress.component';
 
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent},
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   { path: 'detail/:id', component: HeroDetailComponent},
   { path: 'trueSettings', component: SecuredSettingsComponent},
+  { path: 'changePassword', component: ChangePasswordComponent},
+  { path: 'changeHomeAdress', component: HomeAdressComponent},
 ];
 
 @NgModule({

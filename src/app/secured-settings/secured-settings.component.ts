@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SettingsAuthenticationService } from '../settings-authentication.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-secured-settings',
@@ -10,19 +11,22 @@ export class SecuredSettingsComponent implements OnInit {
 
   @Input() newPassword : string;
 
-  constructor(private securedsetting: SettingsAuthenticationService) {
+  constructor(private router : Router,
+              private route: ActivatedRoute) {
 
    }
 
-   setNewPassword(): void {
-      this.securedsetting.setPassword(this.newPassword);
-      //this.tmp = this.securedsetting.getPassword();
+   changePassword(): void {
+    this.router.navigate([`../changePassword`], { relativeTo: this.route});
+  }
+
+  changeHomeAdress(): void {
+    this.router.navigate([`../changeHomeAdress`], { relativeTo: this.route});
   }
 
   ngOnInit() {
-    this.securedsetting.getPassword().subscribe(t => this.newPassword = t);
-    //this.securedsetting.setPassword("4444");
-    //this.newPassword = this.securedsetting.getPassword();
+    
+  
   }
 
 }

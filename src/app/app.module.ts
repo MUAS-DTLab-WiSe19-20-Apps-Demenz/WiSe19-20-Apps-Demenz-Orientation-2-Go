@@ -11,6 +11,8 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SecuredSettingsComponent } from './secured-settings/secured-settings.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
+import { HomeAdressComponent } from './home-adress/home-adress.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { SecuredSettingsComponent } from './secured-settings/secured-settings.co
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    SecuredSettingsComponent
+    SecuredSettingsComponent,
+    ChangePasswordComponent,
+    HomeAdressComponent
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,10 @@
-<div *ngIf="userInput">
-        <h2>{{ userInput }}</h2>
-        <div>
+<div>
+        <div *ngIf=!hasPassword>
             <label>Passwort:  
-                <input [(ngModel)]="userInput" placeholder="userInput"/>
+                <input [(ngModel)]="user"/>
             </label>
         </div>
-        <button (click)="checkInput()">Weiter</button>
+</div>
+<div> 
+<button (click)="checkInput()">Weiter</button>
 </div>
