@@ -1,1 +1,29 @@
-<p>home-adress works!</p>
+<div *ngIf="address">
+    <h4>Die eingetragene Adresse ist: </h4>
+    {{ address.street }} {{ address.housenumber}} {{address.postcode}} {{address.place}}
+</div>
+
+<div>
+    <h2>Adresse ändern</h2>
+    <div>
+        <label>Straße eingeben:
+            <input [(ngModel)]="str" placeholder="..."/>
+        </label>
+    </div><div>
+        <label>Hausnummer eingeben:
+            <input [(ngModel)]="num" placeholder="..."/>
+        </label>
+        </div><div>
+        <label>PLZ eingeben:
+            <input [(ngModel)]="plz" placeholder="..."/>
+        </label>
+    </div><div>
+        <label>Ort eingeben:
+            <input [(ngModel)]="pla" placeholder="..."/>
+        </label>
+    </div>
+    <button (click)="changeAddress()">Adresse ändern</button>
+ 
+</div> 
+
+<div><button (click)="goBack()">Zurück</button></div>

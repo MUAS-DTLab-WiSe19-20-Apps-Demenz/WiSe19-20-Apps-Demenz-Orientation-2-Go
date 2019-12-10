@@ -19,7 +19,6 @@ export class SettingsComponent implements OnInit {
               private route: ActivatedRoute) {}
 
   checkInput(): void {
-    //if(this.settingsauthentication.checkPassword(this.userInput))
     if(this.user == this.userInput) 
           this.router.navigate([`../trueSettings`], { relativeTo: this.route});
   }

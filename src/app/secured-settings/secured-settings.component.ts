@@ -24,6 +24,10 @@ export class SecuredSettingsComponent implements OnInit {
     this.router.navigate([`../changeHomeAdress`], { relativeTo: this.route});
   }
 
+  changeRadius(): void {
+    this.router.navigate([`../radius`], { relativeTo: this.route});
+  }
+
   ngOnInit() {
     
   

@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SecuredSettingsComponent } from './secured-settings/secured-settings.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { HomeAdressComponent } from './home-adress/home-adress.component';
+import { RadiusComponent } from './radius/radius.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HomeAdressComponent } from './home-adress/home-adress.component';
     DashboardComponent,
     SecuredSettingsComponent,
     ChangePasswordComponent,
-    HomeAdressComponent
+    HomeAdressComponent,
+    RadiusComponent
   ],
   imports: [
     BrowserModule,

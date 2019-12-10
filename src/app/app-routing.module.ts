@@ -7,6 +7,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { SecuredSettingsComponent } from './secured-settings/secured-settings.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { HomeAdressComponent } from './home-adress/home-adress.component';
+import { RadiusComponent } from './radius/radius.component';
 
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'trueSettings', component: SecuredSettingsComponent},
   { path: 'changePassword', component: ChangePasswordComponent},
   { path: 'changeHomeAdress', component: HomeAdressComponent},
+  { path: 'radius', component: RadiusComponent},
 ];
 
 @NgModule({
