@@ -3,23 +3,23 @@ import { SettingsDatastoreService } from '../settings-datastore.service';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-radius',
-  templateUrl: './radius.component.html',
-  styleUrls: ['./radius.component.css']
+  selector: 'app-timer',
+  templateUrl: './timer.component.html',
+  styleUrls: ['./timer.component.css']
 })
-export class RadiusComponent implements OnInit {
+export class TimerComponent implements OnInit {
 
-  @Input() radius: number;
+  @Input() timer: number;
 
   constructor(private settingsDataStore: SettingsDatastoreService,
               private location: Location) { }
 
   ngOnInit() {
-    this.settingsDataStore.getRadius().subscribe(t => this.radius = t);
+    this.settingsDataStore.getTimer().subscribe(t => this.timer = t);
   }
 
-  setRadius(): void {
-    this.settingsDataStore.setRadius(this.radius);
+  setTimer(): void {
+    this.settingsDataStore.setTimer(this.timer);
   }
 
   goBack(): void {

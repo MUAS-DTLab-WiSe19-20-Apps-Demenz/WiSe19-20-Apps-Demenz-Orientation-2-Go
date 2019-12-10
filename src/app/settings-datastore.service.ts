@@ -9,6 +9,8 @@ export class SettingsDatastoreService {
 
   address: Address;
   radius: number = 500;
+  timer: number = 30;
+  checkInterval: number = 5;
 
   constructor() { }
 
@@ -32,6 +34,23 @@ export class SettingsDatastoreService {
   setRadius(rad : number): void {
     this.radius = rad;
   } 
+
+  getTimer() : Observable<number> {
+    return of(this.timer);
+  }
+
+  setTimer(tim : number): void {
+    this.timer = tim;
+  } 
+
+  getCheckInterval() : Observable<number> {
+    return of(this.checkInterval);
+  }
+
+  setCheckInterval(check : number): void {
+    this.checkInterval = check;
+  } 
+
 
 
 }

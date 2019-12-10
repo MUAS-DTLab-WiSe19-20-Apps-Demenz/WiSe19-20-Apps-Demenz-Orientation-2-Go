@@ -14,6 +14,10 @@ import { SecuredSettingsComponent } from './secured-settings/secured-settings.co
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { HomeAdressComponent } from './home-adress/home-adress.component';
 import { RadiusComponent } from './radius/radius.component';
+import { TimerComponent } from './timer/timer.component';
+import { CheckIntervalComponent } from './check-interval/check-interval.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import { RadiusComponent } from './radius/radius.component';
     SecuredSettingsComponent,
     ChangePasswordComponent,
     HomeAdressComponent,
-    RadiusComponent
+    RadiusComponent,
+    TimerComponent,
+    CheckIntervalComponent,
+    NavigationComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,

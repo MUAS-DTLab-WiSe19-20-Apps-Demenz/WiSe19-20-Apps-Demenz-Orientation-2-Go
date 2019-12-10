@@ -8,6 +8,10 @@ import { SecuredSettingsComponent } from './secured-settings/secured-settings.co
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { HomeAdressComponent } from './home-adress/home-adress.component';
 import { RadiusComponent } from './radius/radius.component';
+import { CheckIntervalComponent } from './check-interval/check-interval.component';
+import { TimerComponent } from './timer/timer.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent},
@@ -19,6 +23,10 @@ const routes: Routes = [
   { path: 'changePassword', component: ChangePasswordComponent},
   { path: 'changeHomeAdress', component: HomeAdressComponent},
   { path: 'radius', component: RadiusComponent},
+  { path: 'checkInterval', component: CheckIntervalComponent},
+  { path: 'timer', component: TimerComponent},
+  { path: 'navigation', component: NavigationComponent},
+  { path: 'contacts', component: ContactsComponent},
 ];
 
 @NgModule({

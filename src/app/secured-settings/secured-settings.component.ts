@@ -28,6 +28,22 @@ export class SecuredSettingsComponent implements OnInit {
     this.router.navigate([`../radius`], { relativeTo: this.route});
   }
 
+  changeTimer(): void {
+    this.router.navigate([`../timer`], { relativeTo: this.route});
+  }
+
+  changeCheckInterval(): void {
+    this.router.navigate([`../checkInterval`], { relativeTo: this.route});
+  }
+
+  changeNavigation(): void {
+    this.router.navigate([`../navigation`], { relativeTo: this.route});
+  }
+
+  changeContacts(): void {
+    this.router.navigate([`../contacts`], { relativeTo: this.route});
+  }
+
   ngOnInit() {
     
   
