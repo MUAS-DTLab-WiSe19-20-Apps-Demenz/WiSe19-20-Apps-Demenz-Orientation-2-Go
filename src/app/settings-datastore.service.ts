@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Address } from './address';
 import { Observable, of } from 'rxjs';
+import { Contact } from './contact';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,8 @@ export class SettingsDatastoreService {
   radius: number = 500;
   timer: number = 30;
   checkInterval: number = 5;
+  navigation: string = 'Here';
+  contacts: Contact[];
 
   constructor() { }
 
@@ -49,6 +52,14 @@ export class SettingsDatastoreService {
 
   setCheckInterval(check : number): void {
     this.checkInterval = check;
+  } 
+
+  getNavigation() : Observable<string> {
+    return of(this.navigation);
+  }
+
+  setNavigation(nav : string): void {
+    this.navigation = nav;
   } 
 
 
