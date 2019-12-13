@@ -1,0 +1,13 @@
+.mat-toolbar.mat-primary {
+    background: #AAAAAA;
+    color: #FF4136;
+  }
+
+  .example-container {
+    position: absolute;
+    top: 0;
+    bottom: 30;
+    left: 0;
+    right: 0;
+  }
+  
