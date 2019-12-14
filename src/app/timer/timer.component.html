@@ -1,0 +1,16 @@
+<div>
+        Der Timer beträgt {{ timer }} Minuten
+    </div>
+    
+    <div></div>
+    
+    <div>
+            <div>
+                <label>Timer ändern:
+                    <input [(ngModel)]="timer" placeholder=timer/>
+                </label>
+            </div>
+    </div>
+    
+    <div><button (click)="setTimer()">Timer ändern</button></div>
+    <div><button (click)="goBack()">Zurück</button></div>

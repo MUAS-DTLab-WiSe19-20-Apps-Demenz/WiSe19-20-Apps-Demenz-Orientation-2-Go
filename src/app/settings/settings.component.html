@@ -1,0 +1,10 @@
+<div>
+        <div *ngIf=!hasPassword>
+            <label>Passwort:  
+                <input [(ngModel)]="user"/>
+            </label>
+        </div>
+</div>
+<div> 
+<button (click)="checkInput()">Weiter</button>
+</div>

@@ -1,0 +1,16 @@
+<div>
+        Das Zeitintervall beträgt {{ checkInterval }} Minuten
+    </div>
+    
+    <div></div>
+    
+    <div>
+            <div>
+                <label>Zeitintervall ändern:
+                    <input [(ngModel)]="checkInterval" placeholder=checkInterval/>
+                </label>
+            </div>
+    </div>
+    
+    <div><button (click)="setCheckInterval()">Zeitintervall ändern</button></div>
+    <div><button (click)="goBack()">Zurück</button></div>

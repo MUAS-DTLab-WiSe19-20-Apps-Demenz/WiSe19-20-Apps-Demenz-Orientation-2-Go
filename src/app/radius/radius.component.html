@@ -1,0 +1,16 @@
+<div>
+    Der Radius beträgt {{ radius }} m
+</div>
+
+<div></div>
+
+<div>
+        <div>
+            <label>Radius ändern:
+                <input [(ngModel)]="radius" placeholder=radius/>
+            </label>
+        </div>
+</div>
+
+<div><button (click)="setRadius()">Radius ändern</button></div>
+<div><button (click)="goBack()">Zurück</button></div>
