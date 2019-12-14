@@ -12,12 +12,16 @@ import { CheckIntervalComponent } from './check-interval/check-interval.componen
 import { TimerComponent } from './timer/timer.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { HomeComponent } from './home/home.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { MapnavigationComponent } from './mapnavigation/mapnavigation.component';
 
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent},
   { path: 'setings', component: SettingsComponent},
   { path: 'dashboard', component: DashboardComponent},
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  { path: 'home', component: HomeComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'detail/:id', component: HeroDetailComponent},
   { path: 'trueSettings', component: SecuredSettingsComponent},
   { path: 'changePassword', component: ChangePasswordComponent},
@@ -27,6 +31,9 @@ const routes: Routes = [
   { path: 'timer', component: TimerComponent},
   { path: 'navigation', component: NavigationComponent},
   { path: 'contacts', component: ContactsComponent},
+  { path: 'calendar', component: CalendarComponent},
+  { path: 'mapnavigation', component: MapnavigationComponent},
+  
 ];
 
 @NgModule({

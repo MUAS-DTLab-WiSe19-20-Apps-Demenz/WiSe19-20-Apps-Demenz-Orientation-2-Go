@@ -44,6 +44,10 @@ export class SecuredSettingsComponent implements OnInit {
     this.router.navigate([`../contacts`], { relativeTo: this.route});
   }
 
+  backToHome(): void {
+    this.router.navigate([`../home`], { relativeTo: this.route});
+  }
+
   ngOnInit() {
     
   

@@ -18,6 +18,9 @@ import { TimerComponent } from './timer/timer.component';
 import { CheckIntervalComponent } from './check-interval/check-interval.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { HomeComponent } from './home/home.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { MapnavigationComponent } from './mapnavigation/mapnavigation.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { ContactsComponent } from './contacts/contacts.component';
     TimerComponent,
     CheckIntervalComponent,
     NavigationComponent,
-    ContactsComponent
+    ContactsComponent,
+    HomeComponent,
+    CalendarComponent,
+    MapnavigationComponent
   ],
   imports: [
     BrowserModule,
