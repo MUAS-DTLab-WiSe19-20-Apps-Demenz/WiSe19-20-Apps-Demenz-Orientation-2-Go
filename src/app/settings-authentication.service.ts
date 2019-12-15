@@ -6,30 +6,30 @@ import { Observable, of } from 'rxjs';
 })
 export class SettingsAuthenticationService {
 
-  password: string;
   initial: boolean = true;
 
   checkPassword(password: string): boolean {
-    return this.password == password;
+    return localStorage.getItem('password') == password;
   }
 
   setPassword(password: string): void {
-    this.password = password;
+    localStorage.setItem('password', password);
+    console.log(localStorage.getItem('password'));
     this.initial = false;
   }
 
   getPassword() : Observable<string> { 
-    return of(this.password);
+    return of(localStorage.getItem('password'));
   }
 
   isInitial() : Observable<boolean> {
-    if(this.password == null)
+    if(localStorage.getItem('password') == null)
       return of(true);
     return of(false);
   }
 
   getPasswordString() : string { 
-    return this.password;
+    return localStorage.getItem('password');
   }
 
   constructor() { }

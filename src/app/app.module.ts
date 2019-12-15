@@ -22,6 +22,8 @@ import { HomeComponent } from './home/home.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { MapnavigationComponent } from './mapnavigation/mapnavigation.component';
 
+//LocalStorage
+//import { LocalStorageModule } from 'angular-local-storage/angular-local-storage';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +43,7 @@ import { MapnavigationComponent } from './mapnavigation/mapnavigation.component'
     HomeComponent,
     CalendarComponent,
     MapnavigationComponent
+  //  LocalStorageModule
   ],
   imports: [
     BrowserModule,
