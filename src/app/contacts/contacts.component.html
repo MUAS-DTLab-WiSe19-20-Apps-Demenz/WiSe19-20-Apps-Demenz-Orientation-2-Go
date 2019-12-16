@@ -1,1 +1,10 @@
-<p>contacts works!</p>
+<h3>Kontakteinstellungen</h3>
+
+<ul class="contacts">
+        <li *ngFor="let contact of contacts">
+            <span class="badge">{{contact.name}}</span> {{contact.phone}}
+        </li>
+      </ul>
+
+      <div><button (click)="newContact()">Kontakt hinzufügen</button></div>
+      <div><button (click)="goBack()">Zurück</button></div>

@@ -21,6 +21,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { HomeComponent } from './home/home.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { MapnavigationComponent } from './mapnavigation/mapnavigation.component';
+import { CreateNewContactComponent } from './create-new-contact/create-new-contact.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MapnavigationComponent } from './mapnavigation/mapnavigation.component'
     ContactsComponent,
     HomeComponent,
     CalendarComponent,
-    MapnavigationComponent
+    MapnavigationComponent,
+    CreateNewContactComponent
   ],
   imports: [
     BrowserModule,

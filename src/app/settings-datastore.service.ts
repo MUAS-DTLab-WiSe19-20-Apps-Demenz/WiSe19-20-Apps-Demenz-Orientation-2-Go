@@ -13,7 +13,7 @@ export class SettingsDatastoreService {
   timer: number = 30;
   checkInterval: number = 5;
   navigation: string = 'Here';
-  contacts: Contact[];
+  contacts: Contact[] = [];
 
   constructor() { }
 
@@ -61,6 +61,14 @@ export class SettingsDatastoreService {
   setNavigation(nav : string): void {
     this.navigation = nav;
   } 
+
+  getContacts() : Observable<Contact[]> {
+    return of(this.contacts);
+  }
+
+  addContacts(con: Contact) : void {
+    this.contacts.push(con);
+  }
 
 
 
