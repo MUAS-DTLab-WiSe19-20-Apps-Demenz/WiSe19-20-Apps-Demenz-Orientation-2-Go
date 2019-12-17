@@ -30,6 +30,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatInputModule } from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 @NgModule({
@@ -67,6 +68,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatExpansionModule,
     MatInputModule, 
     MatToolbarModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
