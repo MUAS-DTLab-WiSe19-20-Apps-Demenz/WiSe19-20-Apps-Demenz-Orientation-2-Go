@@ -11,7 +11,7 @@
 
 <div>
     <mat-toolbar color="primary">Adresse ändern</mat-toolbar>
-
+    
     <mat-accordion multi="true">
 
         <mat-expansion-panel>
@@ -60,10 +60,38 @@
  
 </div> 
 
+<div class="FormfieldAdress" fxLayout="column" fxLayoutGap="20px">
+  <mat-toolbar color="primary">Adresse ändern</mat-toolbar>
+
+  <div class="Straße">
+    <mat-form-field>
+      <input matInput [(ngModel)]="str" placeholder="Straße">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput [(ngModel)]="num" placeholder="Hausnummer">
+    </mat-form-field>
+  </div>
+
+  <div class="Wohnort">
+    <mat-form-field>
+      <input matInput [(ngModel)]="plz" placeholder="Postleitzahl">
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input matInput [(ngModel)]="pla" placeholder="Ort">
+    </mat-form-field>
+  </div>
+
+</div>
+
 <div fxLayout="row">    
     <button mat-raised-button color="primary" (click)="goBack()">Zurück</button>
     <button mat-raised-button color="primary" (click)="changeAddress()">Adresse ändern</button>
 </div>
 
 
+
 </div> 
+
+

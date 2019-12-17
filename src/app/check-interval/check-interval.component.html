@@ -1,16 +1,20 @@
-<div>
-        Das Zeitintervall beträgt {{ checkInterval }} Minuten
-    </div>
+
+<div fxLayout="column" fxLayoutGap="30px">
+
+        <div class="header">
+            <mat-toolbar color="primary">Synchronisierungsintervall</mat-toolbar>
+            <mat-card>Das derzeitige Synchronisierungsintervall beträgt {{ checkInterval }} Minuten</mat-card>
+        </div>
     
-    <div></div>
+        <div class="Synchronisierungsintervall">
+             <mat-form-field>
+                <input matInput [(ngModel)]="checkInterval" placeholder="Synchronisierungsintervall">
+             </mat-form-field>
+        </div>
     
-    <div>
-            <div>
-                <label>Zeitintervall ändern:
-                    <input [(ngModel)]="checkInterval" placeholder=checkInterval/>
-                </label>
-            </div>
-    </div>
+        <div class="Fortfahren">
+            <button mat-raised-button color="primary" (click)="goBack()">Zurück</button>
+            <button mat-raised-button color="primary" (click)="setCheckInterval()">Synchronisierungsintervall ändern</button> 
+       </div>
     
-    <div><button (click)="setCheckInterval()">Zeitintervall ändern</button></div>
-    <div><button (click)="goBack()">Zurück</button></div>
+ </div>
