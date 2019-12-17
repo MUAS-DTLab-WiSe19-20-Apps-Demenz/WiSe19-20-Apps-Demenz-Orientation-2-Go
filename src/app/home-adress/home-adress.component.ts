@@ -21,11 +21,6 @@ export class HomeAdressComponent implements OnInit {
 
   ngOnInit() {
     this.settingsDatastore.getAddress().subscribe(t => this.address = t);
-    /*this.address.street = "Reinickendorfer Str";
-    this.address.housenumber = 12;
-    this.address.postcode = 58642;
-    this.address.place = "Letmathe";
-    this.settingsDatastore.setAddress(this.address); */
   }
 
   goBack(): void {

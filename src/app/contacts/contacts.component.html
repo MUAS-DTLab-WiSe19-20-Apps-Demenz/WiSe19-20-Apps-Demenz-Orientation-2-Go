@@ -1,8 +1,12 @@
 <h3>Kontakteinstellungen</h3>
 
+<div *ngIf="contacts"></div>
 <ul class="contacts">
-        <li *ngFor="let contact of contacts">
+        <li *ngFor="let contact of contacts"
+            [class.selected]="contact === selectedContact"
+            (click)="onSelect(contact)">
             <span class="badge">{{contact.name}}</span> {{contact.phone}}
+            <button (click)="removeContact(contact)">Entfernen</button>
         </li>
       </ul>
 

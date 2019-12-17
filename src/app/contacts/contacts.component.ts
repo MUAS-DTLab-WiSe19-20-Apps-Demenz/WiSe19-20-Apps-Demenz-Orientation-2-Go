@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Contact } from '../contact';
 import { SettingsDatastoreService } from '../settings-datastore.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -10,7 +10,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ContactsComponent implements OnInit {
 
-  contacts : Contact[];
+  @Input() contacts : Contact[];
+  selectedContact: Contact;
 
   constructor(private settingsDataStore: SettingsDatastoreService,
               private router: Router,
@@ -26,6 +27,14 @@ export class ContactsComponent implements OnInit {
 
   goBack(): void {
     this.router.navigate([`../trueSettings`], { relativeTo: this.route});
+  }
+
+  removeContact(con: Contact) : void {
+    this.settingsDataStore.removeContact(con);
+  }
+
+  onSelect(con: Contact): void {
+    this.selectedContact = con;
   }
 
 }
