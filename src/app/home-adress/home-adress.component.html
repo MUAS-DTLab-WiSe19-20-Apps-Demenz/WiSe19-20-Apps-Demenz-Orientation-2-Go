@@ -1,29 +1,69 @@
+<div fxLayout="column" fxLayoutGap="50px">
+
 <div *ngIf="address">
-    <h4>Die eingetragene Adresse ist: </h4>
-    {{ address.street }} {{ address.housenumber}} {{address.postcode}} {{address.place}}
+    <mat-toolbar color="primary">Die eingetragene Adresse ist: </mat-toolbar>
+    <div class="Output">
+        {{ address.street }} {{ address.housenumber}} {{address.postcode}} {{address.place}}
+    </div>
+    
 </div>
 
+
 <div>
-    <h2>Adresse ändern</h2>
-    <div>
-        <label>Straße eingeben:
-            <input [(ngModel)]="str" placeholder="..."/>
-        </label>
-    </div><div>
-        <label>Hausnummer eingeben:
-            <input [(ngModel)]="num" placeholder="..."/>
-        </label>
-        </div><div>
-        <label>PLZ eingeben:
-            <input [(ngModel)]="plz" placeholder="..."/>
-        </label>
-    </div><div>
-        <label>Ort eingeben:
-            <input [(ngModel)]="pla" placeholder="..."/>
-        </label>
-    </div>
-    <button (click)="changeAddress()">Adresse ändern</button>
+    <mat-toolbar color="primary">Adresse ändern</mat-toolbar>
+
+    <mat-accordion multi="true">
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+                Straße eingeben:
+            </mat-panel-title>
+
+            <mat-panel-description>
+                Straße und Nummer
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <mat-form-field>
+            <input matInput [(ngModel)]="str" placeholder="Straßenname">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput [(ngModel)]="num" placeholder="Hausnummer">
+          </mat-form-field>
+          
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+          
+              <mat-panel-title>
+                Wohnort eingeben
+              </mat-panel-title>
+              <mat-panel-description>
+                  Postleitzahl & Wohnort
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+  
+            <mat-form-field>
+              <input matInput [(ngModel)]="plz" placeholder="PLZ">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput [(ngModel)]="pla" placeholder="Ort">
+              </mat-form-field>
+
+        </mat-expansion-panel>
+
+      </mat-accordion>
  
 </div> 
 
-<div><button (click)="goBack()">Zurück</button></div>
+<div fxLayout="row">    
+    <button mat-raised-button color="primary" (click)="goBack()">Zurück</button>
+    <button mat-raised-button color="primary" (click)="changeAddress()">Adresse ändern</button>
+</div>
+
+
+</div> 

@@ -1,8 +1,39 @@
-.example-container {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #eee;
-  }
+
+
+.Settings{
+  	display: flex;
+  	flex-direction: row; 
+  	flex-wrap: nowrap 
+}
+
+.Calendar{
+  	display: flex;
+  	flex-direction: row; 
+  	flex-wrap: nowrap 
+}
+
+.Orientation{
+  	display: flex;
+  	flex-direction: row; 
+  	flex-wrap: nowrap;
+	  
+}
+
+.mat-icon{
+ 	flex: 1; 
+	margin-left: 2rem;
+ 	font-size:80px;
+	padding: 20px 25px 20px;
+
+} 
+
+.mat-raised-button{
+ 	flex: 2; 
+	margin-left: 8rem;
+	font-size:28px !important;
+    	width:500px;
+  	padding: 20px 25px 20px;
+
+}
+
+

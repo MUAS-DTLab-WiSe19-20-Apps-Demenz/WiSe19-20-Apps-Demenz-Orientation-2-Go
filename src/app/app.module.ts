@@ -22,6 +22,16 @@ import { HomeComponent } from './home/home.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { MapnavigationComponent } from './mapnavigation/mapnavigation.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatIconModule } from '@angular/material/icon';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatInputModule } from '@angular/material';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +58,15 @@ import { MapnavigationComponent } from './mapnavigation/mapnavigation.component'
     RouterModule.forRoot([
         { path: 'settings', component: SettingsComponent},
     ]),
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    MatSliderModule,
+    MatIconModule,
+    FlexLayoutModule, 
+    MatExpansionModule,
+    MatInputModule, 
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

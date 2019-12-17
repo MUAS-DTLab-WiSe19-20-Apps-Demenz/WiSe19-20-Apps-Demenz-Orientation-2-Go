@@ -1,12 +1,38 @@
    
-<div><button (click)="changePassword()">Passwort ändern</button></div>
-<div><button (click)="changeNavigation()">Navigation wählen</button></div>
-<div><button (click)="changeContacts()">Kontakte einstellen</button></div>
-<div><button (click)="changeHomeAdress()">Heimatadresse einstellen</button></div>
-<div><button (click)="changeRadius()">Radius einstellen</button></div>
-<div><button (click)="changeTimer()">Timer einstellen</button></div>
-<div><button (click)="changeCheckInterval()">Zeitintervall einstellen</button></div>
-<div><button (click)="backToHome()">Zurück</button></div>
       
-      
+<div fxLayout="column" fxLayoutGap="10px">
+
+    <div class="Password">
+        <button mat-raised-button color="primary" (click)="changePassword()" type="button"> Passwort ändern</button>
+    </div>
+
+    <div class="Navigation">
+        <button mat-raised-button color="primary" (click)="changeNavigation()" type="button"> Navigation wählen</button>
+    </div>
+
+    <div class="Kontakte">
+        <button mat-raised-button color="primary" (click)="changeContacts()" type="button"> Kontakte einstellen</button>
+    </div>
+
+    <div class="Homeadresse">
+        <button mat-raised-button color="primary" (click)="changeHomeAdress()" type="button"> Heimatadresse einstellen</button>
+    </div>
+
+    <div class="Radius">
+        <button mat-raised-button color="primary" (click)="changeRadius()" type="button"> Radius einstellen</button>
+    </div>
+
+    <div class="Timer">
+        <button mat-raised-button color="primary" (click)="changeTimer()" type="button"> Timer einstellen</button>
+    </div>
+
+    <div class="Zeitintervall">
+        <button mat-raised-button color="primary" (click)="changeCheckInterval()" type="button"> Zeitintervall einstellen</button>
+    </div>
+
+    <div class="Zurück">
+        <button mat-raised-button color="primary" (click)="backToHome()" type="button"> Zurück</button>
+    </div>
+
+</div>     
 
