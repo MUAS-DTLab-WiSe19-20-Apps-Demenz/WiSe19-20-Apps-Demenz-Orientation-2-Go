@@ -1,6 +1,5 @@
 <h3>Kontakteinstellungen</h3>
 
-<div *ngIf="contacts"></div>
 <ul class="contacts">
         <li *ngFor="let contact of contacts"
             [class.selected]="contact === selectedContact"
@@ -12,3 +11,5 @@
 
       <div><button (click)="newContact()">Kontakt hinzufügen</button></div>
       <div><button (click)="goBack()">Zurück</button></div>
+
+      <app-change-contact [con]="selectedContact"></app-change-contact>

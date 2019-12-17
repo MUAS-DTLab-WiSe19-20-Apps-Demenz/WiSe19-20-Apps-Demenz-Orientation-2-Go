@@ -22,6 +22,7 @@ import { HomeComponent } from './home/home.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { MapnavigationComponent } from './mapnavigation/mapnavigation.component';
 import { CreateNewContactComponent } from './create-new-contact/create-new-contact.component';
+import { ChangeContactComponent } from './change-contact/change-contact.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { CreateNewContactComponent } from './create-new-contact/create-new-conta
     HomeComponent,
     CalendarComponent,
     MapnavigationComponent,
-    CreateNewContactComponent
+    CreateNewContactComponent,
+    ChangeContactComponent
   ],
   imports: [
     BrowserModule,

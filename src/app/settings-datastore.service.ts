@@ -15,7 +15,6 @@ export class SettingsDatastoreService {
   checkInterval: number = 5;
   navigation: string = 'Here';
   contacts: Contact[] = [];
-  ind: number;
 
   constructor(private router: Router,
               private route: ActivatedRoute) { }
@@ -80,24 +79,6 @@ export class SettingsDatastoreService {
     console.log(index + " sollte entfernt werden");
 
     var hel = this.contacts.splice(0, 1);
-
-    /*
-    console.log(hel);
-    for(let i = 0; i < 1; i++) {
-        let c = this.contacts[i];
-        console.log(c.name);
-        console.log(c.phone);
-    }/*
-    this.contacts.pop();
-    for(let i = 0; i < 2; i++) {
-      let c = this.contacts[i];
-      console.log(c.name);
-      console.log(c.phone);
-  } */
-
-    
-
-    
   }
 
 

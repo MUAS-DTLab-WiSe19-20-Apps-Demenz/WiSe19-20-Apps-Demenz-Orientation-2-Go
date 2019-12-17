@@ -33,7 +33,7 @@ export class ContactsComponent implements OnInit {
     this.settingsDataStore.removeContact(con);
   }
 
-  onSelect(con: Contact): void {
+  onSelect(con: Contact) {
     this.selectedContact = con;
   }
 
