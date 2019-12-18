@@ -30,3 +30,39 @@ h1 {
 h3 {
   color: blue;
 }
+
+::ng-deep .mat-raised-button{
+	width: 15% ;
+	font-size:22px ;
+  	padding: 5px 0px 5px !important;
+}
+
+::ng-deep .mat-toolbar{
+	font-size:26px;
+}
+
+::ng-deep .mat-expansion-panel-header{
+	font-size:20px;
+}
+
+::ng-deep .mat-form-field{
+	font-size:18px;
+}
+
+
+::ng-deep .mat-slide-toggle{
+	font-size:20px ;
+}
+
+::ng-deep .mat-card{
+	font-size:20px ;
+}
+
+::ng-deep .mat-radio-button{
+	font-size:25px ;
+	margin-left:1rem;
+}
+
+
+
+

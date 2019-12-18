@@ -29,10 +29,10 @@
 
 .mat-raised-button{
  	flex: 2; 
-	margin-left: 8rem;
+	margin-left: 8rem !important;
 	font-size:28px !important;
-    	width:500px;
-  	padding: 20px 25px 20px;
+    	width:400px !important;
+  	padding: 20px 15px 20px !important;
 
 }
 

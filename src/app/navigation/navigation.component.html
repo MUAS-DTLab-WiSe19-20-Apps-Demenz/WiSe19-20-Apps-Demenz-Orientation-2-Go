@@ -2,8 +2,9 @@
 <div fxLayout="column" fxLayoutGap="30px">
 
    <div class="Header">
-    <mat-toolbar color="primary">Die ausgewählte Navigationsart ist: {{ navigation }}</mat-toolbar>
-</div>
+    <mat-toolbar color="primary">Navigationsart</mat-toolbar>
+    <mat-card>Die ausgewählte Navigationsart ist: {{ navigation }}</mat-card>
+    </div>
     <div class="Options" >
         <mat-radio-group fxLayout="column" fxLayoutGap="20px" aria-label="Select an option">
             <mat-radio-button (click)="changeToGoogle()" value="1">Google</mat-radio-button>
