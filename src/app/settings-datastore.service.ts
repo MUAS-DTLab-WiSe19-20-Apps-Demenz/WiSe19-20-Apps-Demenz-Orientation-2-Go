@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Address } from './address';
 import { Observable, of } from 'rxjs';
 import { Contact } from './contact';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -77,5 +78,24 @@ export class SettingsDatastoreService {
   setNavigation(nav : string): void {
     localStorage.setItem('navigation', nav);
   } 
+
+  getContacts() : Observable<Contact[]> {
+    return of(this.contacts);
+  }
+
+  addContacts(con: Contact) : void {
+    this.contacts.push(con);
+  }
+
+  removeContact(con: Contact) : void {
+  
+    console.log("Übergebener wert: " + con.name + " " + con.phone);
+    const index: number = this.contacts.indexOf(con);
+    console.log(index + " sollte entfernt werden");
+
+    var hel = this.contacts.splice(0, 1);
+  }
+
+
 
 }

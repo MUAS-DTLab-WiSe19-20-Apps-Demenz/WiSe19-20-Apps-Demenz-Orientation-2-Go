@@ -21,6 +21,8 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { HomeComponent } from './home/home.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { MapnavigationComponent } from './mapnavigation/mapnavigation.component';
+import { CreateNewContactComponent } from './create-new-contact/create-new-contact.component';
+import { ChangeContactComponent } from './change-contact/change-contact.component';
 
 //LocalStorage
 //import { LocalStorageModule } from 'angular-local-storage/angular-local-storage';
@@ -42,8 +44,9 @@ import { MapnavigationComponent } from './mapnavigation/mapnavigation.component'
     ContactsComponent,
     HomeComponent,
     CalendarComponent,
-    MapnavigationComponent
-  //  LocalStorageModule
+    MapnavigationComponent,
+    CreateNewContactComponent,
+    ChangeContactComponent
   ],
   imports: [
     BrowserModule,
