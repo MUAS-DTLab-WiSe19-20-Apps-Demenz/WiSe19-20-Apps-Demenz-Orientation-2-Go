@@ -28,6 +28,9 @@ export class SettingsDatastoreService {
     if(localStorage.getItem('radius') == null){
       localStorage.setItem('radius', "500");
     }
+    if(localStorage.getItem('timer') == null){
+      localStorage.setItem('timer', "30");
+    }
   }
 
   getAddress() : Observable<Address> {
@@ -95,7 +98,4 @@ export class SettingsDatastoreService {
 
     var hel = this.contacts.splice(0, 1);
   }
-
-
-
 }
