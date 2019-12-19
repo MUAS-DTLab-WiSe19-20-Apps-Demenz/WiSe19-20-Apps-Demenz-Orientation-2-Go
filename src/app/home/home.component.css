@@ -1,8 +1,43 @@
-.example-container {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #eee;
-  }
+
+
+.Calendar{
+  	display: flex;
+  	flex-direction: row; 
+  	flex-wrap: nowrap 
+}
+
+.Orientation{
+  	display: flex;
+  	flex-direction: row; 
+  	flex-wrap: nowrap;
+	  
+}
+
+.mat-icon{
+ 	flex: 1; 
+	left:15%;
+ 	font-size:100px;
+
+} 
+
+.mat-raised-button{
+ 	flex: 2; 
+	left: 23% !important;
+	font-size:28px !important;
+    	width:70% !important;
+  	padding: 15px 15px 15px !important;
+	position: absolute !important;
+
+}
+
+.Zahnrad{
+	left:75% !important;
+}
+
+.Settings{
+  	display: flex;
+  	flex-direction: row; 
+  	flex-wrap: nowrap; 
+}
+
+

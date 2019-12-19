@@ -1,10 +1,16 @@
-<div>
-        <div *ngIf=!hasPassword>
-            <label>Passwort:  
-                <input [(ngModel)]="user"/>
-            </label>
+<div fxLayout="column" fxLayoutGap="30px">
+    <div *ngIf=!hasPassword class="EingabePasswort" fxLayout="column" fxLayoutGap="20px">
+        <mat-toolbar color="primary">Passwort eingeben, um fortzufahren</mat-toolbar>
+  
+        <div class="Passwort">
+         <mat-form-field>
+            <input matInput [(ngModel)]="user" placeholder="Passwort">
+         </mat-form-field>
         </div>
-</div>
-<div> 
-<button (click)="checkInput()">Weiter</button>
+
+    </div>
+  
+    <button mat-raised-button color="primary" width="20px" (click)="checkInput()">Fortfahren</button>  
+    
+      
 </div>

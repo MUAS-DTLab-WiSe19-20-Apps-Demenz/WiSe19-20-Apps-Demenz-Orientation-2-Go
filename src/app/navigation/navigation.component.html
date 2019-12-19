@@ -1,8 +1,19 @@
-<div><h5>Die ausgewählte Navigationsart ist: {{ navigation }}</h5></div>
-<div>
-    <ul>
-        <li><button (click)="changeToGoogle()">Google</button></li>
-         <li><button (click)="changeToHere()">Here</button></li>
-    </ul>
-</div>
-<div><button (click)="goBack()">Zurück</button></div>
+
+<div fxLayout="column" fxLayoutGap="30px">
+
+   <div class="Header">
+    <mat-toolbar color="primary">Navigationsart</mat-toolbar>
+    <mat-card>Die ausgewählte Navigationsart ist: {{ navigation }}</mat-card>
+    </div>
+    <div class="Options" >
+        <mat-radio-group fxLayout="column" fxLayoutGap="20px" aria-label="Select an option">
+            <mat-radio-button (click)="changeToGoogle()" value="1">Google</mat-radio-button>
+            <mat-radio-button (click)="changeToHere()" value="2">Here</mat-radio-button>
+        </mat-radio-group>
+    </div>
+
+    <div>    
+        <button mat-raised-button color="primary" (click)="goBack()">Zurück</button>
+    </div>
+
+</div> 
