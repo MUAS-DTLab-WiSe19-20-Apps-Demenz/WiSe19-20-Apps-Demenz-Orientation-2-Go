@@ -1,20 +1,16 @@
-
-<div fxLayout="column" fxLayoutGap="30px">
-
-    <div class="header">
-        <mat-toolbar color="primary">Timer</mat-toolbar>
-        <mat-card>Der derzeitige Timer beträgt {{ timer }} Minuten</mat-card>
+<div>
+        Der Timer beträgt {{ timer }} Minuten
     </div>
-
-    <div class="Timer">
-         <mat-form-field>
-            <input matInput [(ngModel)]="timer" placeholder="Timer">
-         </mat-form-field>
+    
+    <div></div>
+    
+    <div>
+            <div>
+                <label>Timer ändern:
+                    <input [(ngModel)]="timer" placeholder=timer/>
+                </label>
+            </div>
     </div>
-
-    <div class="Fortfahren">
-        <button mat-raised-button color="primary" (click)="goBack()">Zurück</button>
-        <button mat-raised-button color="primary" (click)="setTimer()">Timer ändern</button> 
-   </div>
-
-</div>
+    
+    <div><button (click)="setTimer()">Timer ändern</button></div>
+    <div><button (click)="goBack()">Zurück</button></div>
