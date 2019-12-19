@@ -15,7 +15,7 @@ export class HomeComponent {
               private settingsAuth: SettingsAuthenticationService) { }
 
   settingsClick() {
-    console.log("Settings-Button pressed!");
+    console.log(localStorage.getItem('password'));
     if(this.ini) {
       let route = this.router.config.find(r => r.path === 'trueSettings');
       this.router.navigateByUrl(`${'trueSettings'}`);

@@ -21,6 +21,8 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { HomeComponent } from './home/home.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { MapnavigationComponent } from './mapnavigation/mapnavigation.component';
+import { CreateNewContactComponent } from './create-new-contact/create-new-contact.component';
+import { ChangeContactComponent } from './change-contact/change-contact.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material';
@@ -55,7 +57,9 @@ import {MatCardModule} from '@angular/material/card';
     ContactsComponent,
     HomeComponent,
     CalendarComponent,
-    MapnavigationComponent
+    MapnavigationComponent,
+    CreateNewContactComponent,
+    ChangeContactComponent
   ],
   imports: [
     BrowserModule,
