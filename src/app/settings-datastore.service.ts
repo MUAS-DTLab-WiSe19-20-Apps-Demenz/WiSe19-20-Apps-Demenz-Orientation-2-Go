@@ -13,55 +13,70 @@ export class SettingsDatastoreService {
   radius: number = 500;
   timer: number = 30;
   checkInterval: number = 5;
-  navigation: string = 'Here';
-  contacts: Contact[] = [];
+  contacts: Contact[];
 
-  constructor(private router: Router,
-              private route: ActivatedRoute) { }
+  constructor() {
+    if(localStorage.getItem('checkInterval') == null){
+      localStorage.setItem('checkInterval', "5");
+    }
+    if(this.address == null) 
+      this.address = new Address;
+    this.address.housenumber = parseInt(localStorage.getItem('housenumber'));
+    this.address.place = localStorage.getItem('place');
+    this.address.postcode = parseInt(localStorage.getItem('postcode'));
+    this.address.street = localStorage.getItem('street');
+    if(localStorage.getItem('radius') == null){
+      localStorage.setItem('radius', "500");
+    }
+  }
 
   getAddress() : Observable<Address> {
     return of(this.address);
   }
 
   setAddress(addr : Address): void {
-    if(this.address == null) 
-      this.address = new Address;
-    this.address.housenumber = addr.housenumber;
-    this.address.place = addr.place;
-    this.address.postcode = addr.postcode;
-    this.address.street = addr.street;
+    
+    localStorage.setItem('housenumber', addr.housenumber.toString());
+    localStorage.setItem('place', addr.place);
+    localStorage.setItem('postcode', addr.postcode.toString());
+    localStorage.setItem('street', addr.street);
+    
+    this.address.housenumber = parseInt(localStorage.getItem('housenumber'));
+    this.address.place = localStorage.getItem('place');
+    this.address.postcode = parseInt(localStorage.getItem('postcode'));
+    this.address.street = localStorage.getItem('street');
   } 
 
   getRadius() : Observable<number> {
-    return of(this.radius);
+    return of(parseInt(localStorage.getItem('radius')));
   }
 
   setRadius(rad : number): void {
-    this.radius = rad;
+    localStorage.setItem('radius', rad.toString());
   } 
 
   getTimer() : Observable<number> {
-    return of(this.timer);
+    return of(parseInt(localStorage.getItem('timer')));
   }
 
   setTimer(tim : number): void {
-    this.timer = tim;
+    localStorage.setItem('timer', tim.toString());
   } 
 
   getCheckInterval() : Observable<number> {
-    return of(this.checkInterval);
+    return of(parseInt(localStorage.getItem('checkInterval')));
   }
 
   setCheckInterval(check : number): void {
-    this.checkInterval = check;
+    localStorage.setItem('checkInterval', check.toString());
   } 
 
   getNavigation() : Observable<string> {
-    return of(this.navigation);
+    return of(localStorage.getItem('navigation'));
   }
 
   setNavigation(nav : string): void {
-    this.navigation = nav;
+    localStorage.setItem('navigation', nav);
   } 
 
   getContacts() : Observable<Contact[]> {

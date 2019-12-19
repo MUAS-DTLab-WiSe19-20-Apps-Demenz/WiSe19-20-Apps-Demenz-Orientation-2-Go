@@ -8,6 +8,16 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+  <app-root>  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script> 
+    <script src="bower_components/js/angular-local-storage.min.js"></script> 
+    <script>
+        var myApp = angular.module('myApp', ['LocalStorageModule']);
+        myApp.config(function (localStorageServiceProvider) {
+          localStorageServiceProvider
+          .setPrefix('g6')
+          .setStorageType('localStorage')
+          .setNotify(true, true)
+        });
+    </script> </app-root>
 </body>
 </html>

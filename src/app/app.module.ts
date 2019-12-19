@@ -24,6 +24,8 @@ import { MapnavigationComponent } from './mapnavigation/mapnavigation.component'
 import { CreateNewContactComponent } from './create-new-contact/create-new-contact.component';
 import { ChangeContactComponent } from './change-contact/change-contact.component';
 
+//LocalStorage
+//import { LocalStorageModule } from 'angular-local-storage/angular-local-storage';
 @NgModule({
   declarations: [
     AppComponent,
