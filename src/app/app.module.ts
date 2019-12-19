@@ -24,21 +24,8 @@ import { MapnavigationComponent } from './mapnavigation/mapnavigation.component'
 import { CreateNewContactComponent } from './create-new-contact/create-new-contact.component';
 import { ChangeContactComponent } from './change-contact/change-contact.component';
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material';
-import { MatSliderModule } from '@angular/material/slider';
-import { MatIconModule } from '@angular/material/icon';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatInputModule } from '@angular/material';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select'
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatCardModule} from '@angular/material/card';
-
-
+//LocalStorage
+//import { LocalStorageModule } from 'angular-local-storage/angular-local-storage';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,20 +54,7 @@ import {MatCardModule} from '@angular/material/card';
     RouterModule.forRoot([
         { path: 'settings', component: SettingsComponent},
     ]),
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    MatSliderModule,
-    MatIconModule,
-    FlexLayoutModule, 
-    MatExpansionModule,
-    MatInputModule, 
-    MatToolbarModule,
-    MatRadioModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatSlideToggleModule,
-    MatCardModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
