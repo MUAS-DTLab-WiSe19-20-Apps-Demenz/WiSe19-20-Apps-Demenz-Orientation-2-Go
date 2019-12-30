@@ -1,0 +1,9 @@
+<h3>Kontakte</h3>
+        <div>
+            <label>Neuen Kontakt eingeben:
+                <input [(ngModel)]="name" placeholder="Name eingeben"/>
+                <input [(ngModel)]="phone" placeholder="Telefonnummer eingeben"/>
+            </label>
+        </div>
+        <div><button (click)="addContact()">Speichern</button></div>
+        <div><button (click)="goBack()">Zurück</button></div>

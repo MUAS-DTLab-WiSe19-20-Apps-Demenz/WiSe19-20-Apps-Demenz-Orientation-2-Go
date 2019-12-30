@@ -1,13 +1,27 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Orientation</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
 </head>
 <body>
-  <app-root></app-root>
+  <app-root>  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script> 
+    <script src="bower_components/js/angular-local-storage.min.js"></script> 
+    <script>
+        var myApp = angular.module('myApp', ['LocalStorageModule']);
+        myApp.config(function (localStorageServiceProvider) {
+          localStorageServiceProvider
+          .setPrefix('g6')
+          .setStorageType('localStorage')
+          .setNotify(true, true)
+        });
+    </script> </app-root>
 </body>
 </html>

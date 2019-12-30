@@ -15,6 +15,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { HomeComponent } from './home/home.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { MapnavigationComponent } from './mapnavigation/mapnavigation.component';
+import { CreateNewContactComponent } from './create-new-contact/create-new-contact.component';
 
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent},
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'contacts', component: ContactsComponent},
   { path: 'calendar', component: CalendarComponent},
   { path: 'mapnavigation', component: MapnavigationComponent},
+  { path: 'newContact', component: CreateNewContactComponent},
   
 ];
 

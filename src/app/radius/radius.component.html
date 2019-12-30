@@ -1,16 +1,20 @@
-<div>
-    Der Radius beträgt {{ radius }} m
+
+<div fxLayout="column" fxLayoutGap="30px">
+
+    <div class="header">
+        <mat-toolbar color="primary">Radius</mat-toolbar>
+        <mat-card>Der derzeitige Radius beträgt {{radius}} m</mat-card>
+    </div>
+
+    <div class="Radius">
+         <mat-form-field>
+            <input matInput [(ngModel)]="radius" placeholder="Radius">
+         </mat-form-field>
+    </div>
+
+    <div class="Fortfahren">
+        <button mat-raised-button color="primary" (click)="goBack()">Zurück</button>
+        <button mat-raised-button color="primary" (click)="setRadius()">Radius ändern</button> 
+   </div>
+
 </div>
-
-<div></div>
-
-<div>
-        <div>
-            <label>Radius ändern:
-                <input [(ngModel)]="radius" placeholder=radius/>
-            </label>
-        </div>
-</div>
-
-<div><button (click)="setRadius()">Radius ändern</button></div>
-<div><button (click)="goBack()">Zurück</button></div>

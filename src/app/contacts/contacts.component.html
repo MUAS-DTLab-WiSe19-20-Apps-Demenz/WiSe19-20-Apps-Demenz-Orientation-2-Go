@@ -1,1 +1,15 @@
-<p>contacts works!</p>
+<h3>Kontakteinstellungen</h3>
+
+<ul class="contacts">
+        <li *ngFor="let contact of contacts"
+            [class.selected]="contact === selectedContact"
+            (click)="onSelect(contact)">
+            <span class="badge">{{contact.name}}</span> {{contact.phone}}
+            <button (click)="removeContact(contact)">Entfernen</button>
+        </li>
+      </ul>
+
+      <div><button (click)="newContact()">Kontakt hinzufügen</button></div>
+      <div><button (click)="goBack()">Zurück</button></div>
+
+      <app-change-contact [con]="selectedContact"></app-change-contact>

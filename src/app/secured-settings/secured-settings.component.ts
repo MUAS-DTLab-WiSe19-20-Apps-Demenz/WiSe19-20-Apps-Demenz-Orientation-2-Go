@@ -21,10 +21,15 @@ export class SecuredSettingsComponent implements OnInit {
   }
 
   changeHomeAdress(): void {
+    console.log(localStorage.getItem('housenumber'));
+    console.log(localStorage.getItem('place'));
+    console.log(localStorage.getItem('postcode'));
+    console.log(localStorage.getItem('street'));
     this.router.navigate([`../changeHomeAdress`], { relativeTo: this.route});
   }
 
   changeRadius(): void {
+    console.log(localStorage.getItem('radius'));
     this.router.navigate([`../radius`], { relativeTo: this.route});
   }
 
