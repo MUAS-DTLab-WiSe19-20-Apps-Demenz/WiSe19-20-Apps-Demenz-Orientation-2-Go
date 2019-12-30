@@ -46,6 +46,7 @@ export class SecuredSettingsComponent implements OnInit {
   }
 
   changeContacts(): void {
+    console.log(JSON.parse(localStorage.getItem("contacts")));
     this.router.navigate([`../contacts`], { relativeTo: this.route});
   }
 
