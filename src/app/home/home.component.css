@@ -1,6 +1,11 @@
-
+.Settings{
+  	display: flex;
+  	flex-direction: row; 
+  	flex-wrap: nowrap; 
+}
 
 .Calendar{
+
   	display: flex;
   	flex-direction: row; 
   	flex-wrap: nowrap 
@@ -15,29 +20,48 @@
 
 .mat-icon{
  	flex: 1; 
-	left:15%;
- 	font-size:100px;
-
+  	transform: scale(3);
 } 
 
 .mat-raised-button{
  	flex: 2; 
-	left: 23% !important;
-	font-size:28px !important;
-    	width:70% !important;
-  	padding: 15px 15px 15px !important;
-	position: absolute !important;
+	font-size:26px !important;
+    	width:75% !important;
+	height: 10% !important;
 
 }
 
 .Zahnrad{
-	left:75% !important;
+	position: absolute !important;
+	top: 15% !important;
+	left: 75% !important;
+  	transform: scale(1.5);
 }
 
-.Settings{
-  	display: flex;
-  	flex-direction: row; 
-  	flex-wrap: nowrap; 
+.HomeIcon{
+	position: absolute !important;
+	top: 35% !important;
+	left: 6% !important;
 }
+
+.BringMeHome{
+	position: absolute !important;
+	top: 33% !important;
+	left: 23% !important;
+}
+
+.CalendarIcon{
+	position: absolute !important;
+	top: 60% !important;
+	left: 6% !important;
+}
+
+.CalendarTab{
+	position: absolute !important;
+	top: 58% !important;
+	left: 23% !important;
+}
+
+
 
 

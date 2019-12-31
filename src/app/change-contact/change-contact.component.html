@@ -1,11 +1,22 @@
+
 <div *ngIf="con">
+
     <label>Name ändern:
         <input [(ngModel)]="con.name" placeholder="..."/>
-    </label></div><div *ngIf="con">
+    </label>
+    
+</div>
+    
+<div *ngIf="con">
+
     <label>Telefonnummer ändern:
         <input [(ngModel)]="con.phone" placeholder="..."/>
     </label>
-    <div><button (click)="save()">Speichern</button></div>
+
+    <div>
+        <button (click)="save()">Speichern</button>
     </div>
+
+</div>
 
    

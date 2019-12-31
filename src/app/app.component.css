@@ -36,6 +36,7 @@ h3 {
 	left:10%;
 	font-size:22px ;
   	padding: 5px 0px 5px !important;
+	margin-right: 0.1rem !important;
 }
 
 ::ng-deep .mat-toolbar{
@@ -64,6 +65,18 @@ h3 {
 	margin-left:1rem;
 }
 
+::ng-deep .mat-expansion-panel-header{
+	font-size:22px ;
+  	padding: 0px 5px 40px 5px !important;
+}
+
+::ng-deep .mat-content{
+	height:30px !important;
+  	padding: 50px 10px 50px 10px !important;
+}
 
 
+
+
+        
 
