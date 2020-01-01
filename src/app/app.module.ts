@@ -38,6 +38,8 @@ import {MatSelectModule} from '@angular/material/select'
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
 
+import { FullCalendarModule } from '@fullcalendar/angular';
+
 
 @NgModule({
   declarations: [
@@ -80,7 +82,8 @@ import {MatCardModule} from '@angular/material/card';
     MatFormFieldModule,
     MatSelectModule,
     MatSlideToggleModule,
-    MatCardModule
+    MatCardModule,
+    FullCalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

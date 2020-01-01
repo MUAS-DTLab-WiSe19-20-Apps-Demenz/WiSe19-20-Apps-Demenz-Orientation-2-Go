@@ -1,7 +1,18 @@
-<div *ngIf="calendarActivated">
-    <h1>
-        Kalender!
-      </h1>
-</div>
-
+<full-calendar
+#calendar
+defaultView="dayGridMonth"
+[header]="{
+  left: 'prev,next today',
+  center: 'title',
+  right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+}"
+[plugins]="calendarPlugins"
+[weekends]="calendarWeekends"
+[events]="[
+    { title: 'event 1', date: '2019-04-01' },
+    { title: 'event 2', date: '2019-04-02' }
+  ]"
+(dateClick)="handleDateClick($event)"
+(eventClick)="eventClicked($event)"
+></full-calendar>
 <a routerLink="/home"> Go back</a>
