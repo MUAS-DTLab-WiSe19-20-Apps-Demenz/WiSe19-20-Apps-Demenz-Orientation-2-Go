@@ -1,0 +1,9 @@
+<div>
+    <label>Neues Event eingeben:
+        <input [(ngModel)]="name" placeholder="Ereignisname"/>
+        <input [(ngModel)]="time" placeholder="Uhrzeit eingeben"/>
+        <input [(ngModel)]="place" placeholder="Standort eingeben"/>
+    </label>
+</div>
+
+<div><button (click)="addEvent()">Speichern</button></div>

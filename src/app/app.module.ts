@@ -39,6 +39,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
 
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { CalendarAddEventComponent } from './calendar-add-event/calendar-add-event.component';
+import { CalendarChangeEventComponent } from './calendar-change-event/calendar-change-event.component';
 
 
 @NgModule({
@@ -61,7 +63,9 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     CalendarComponent,
     MapnavigationComponent,
     CreateNewContactComponent,
-    ChangeContactComponent
+    ChangeContactComponent,
+    CalendarAddEventComponent,
+    CalendarChangeEventComponent
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,8 @@ import { HomeComponent } from './home/home.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { MapnavigationComponent } from './mapnavigation/mapnavigation.component';
 import { CreateNewContactComponent } from './create-new-contact/create-new-contact.component';
+import { CalendarAddEventComponent} from './calendar-add-event/calendar-add-event.component';
+import { CalendarChangeEventComponent } from './calendar-change-event/calendar-change-event.component';
 
 const routes: Routes = [
   { path: 'heroes', component: HeroesComponent},
@@ -35,6 +37,8 @@ const routes: Routes = [
   { path: 'calendar', component: CalendarComponent},
   { path: 'mapnavigation', component: MapnavigationComponent},
   { path: 'newContact', component: CreateNewContactComponent},
+  { path: 'addEvent', component: CalendarAddEventComponent},
+  { path: 'changeEvent', component: CalendarChangeEventComponent}
   
 ];
 

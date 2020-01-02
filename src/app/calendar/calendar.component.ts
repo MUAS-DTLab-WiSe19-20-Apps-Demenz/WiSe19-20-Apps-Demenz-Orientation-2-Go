@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EventInput } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGrigPlugin from '@fullcalendar/timegrid';
@@ -14,36 +14,31 @@ export class CalendarComponent implements OnInit {
 
   calendarPlugins = [dayGridPlugin, timeGrigPlugin, interactionPlugin];
   calendarEvents = [
-    { title: 'event 1', date: '2019-04-01' }
+    { title: 'event 1',
+    start:  '2020-01-01T14:30:00',
+    place: 'Lothstraße 64'}
   ];
   calendarActivated: any;
 
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute,
+              private router: Router) {}
 
 
-  modifyTitle(eventIndex, newTitle) {
-    let calendarEvents = this.calendarEvents.slice();
-    let singleEvent = Object.assign({}, calendarEvents[eventIndex]);
-    singleEvent.title = newTitle;
-    calendarEvents[eventIndex] = singleEvent;
-    this.calendarEvents = calendarEvents; 
-  }
-
-  addEvent() {
-    this.calendarEvents = this.calendarEvents.concat(
-      {title: 'event 2', date: '2019-04-02'}
-    );
-  }
 
   handleDateClick(calDate) {
+    let route = this.router.config.find(r => r.path === 'addEvent');
+      this.router.navigateByUrl(`${'addEvent'}`);
     console.log(calDate);
  }
 
  eventClicked(calDate) {
+  let route = this.router.config.find(r => r.path === 'changeEvent');
+  this.router.navigateByUrl(`${'changeEvent'}`);
    console.log(calDate);
  }
-  ngOnInit() {
+
+ ngOnInit() {
     this.route.data.subscribe((res) => {this.calendarActivated = res;
     },
     error => {
