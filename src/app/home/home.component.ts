@@ -29,7 +29,15 @@ export class HomeComponent {
   bringMeHome() {
     console.log("Bring_Me_Home-Button pressed!");
     let route = this.router.config.find(r => r.path === 'mapnavigation');
-    window.location.href = 'http://maps.google.com/maps?saddr=brighton&daddr=timbuktu';
+    let destination = new Address;
+    this.settingsDatastore.getAddress().subscribe(t => destination = t);
+    if(destination.housenumber == NaN){
+      destination.street = 'Lothstraße';
+      destination.housenumber = 40;
+      destination.place = "München";
+    }
+    window.location.href = 'https://www.google.com/maps/dir/?api=1&destination='
+      + encodeURIComponent(destination.place + ', ' + destination.street + ' ' + destination.housenumber);
 //    this.router.navigateByUrl(`${'mapnavigation'}`);
   }
 
