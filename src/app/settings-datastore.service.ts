@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Address } from './address';
 import { Observable, of } from 'rxjs';
 import { Contact } from './contact';
-import { Event } from './event';
+import { Appointment } from './appointment.type';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Injectable({
@@ -100,22 +100,4 @@ export class SettingsDatastoreService {
     var hel = this.contacts.splice(0, 1);
   }
 
-  addEvent(event: Event) : void {
-    var currentNames = localStorage.getItem('eventNames');
-    var currentPlaces = localStorage.getItem('eventPlaces');
-    var currentTimes = localStorage.getItem('eventTimes');
-
-    if(currentNames == null){
-      localStorage.setItem('eventNames', JSON.stringify(event.name));
-      localStorage.setItem('eventPlaces', JSON.stringify(event.place)),
-      localStorage.setItem('eventTimes', JSON.stringify(event.time));
-    }
-    else{
-      localStorage.setItem('eventNames', JSON.stringify(currentNames.concat(event.name)));
-      localStorage.setItem('eventPlaces', JSON.stringify(currentPlaces.concat(event.place)));
-      localStorage.setItem('eventTimes', JSON.stringify(currentTimes.concat(event.time)));
-    }
-    
-    console.log(localStorage.getItem('eventNames'));
-  }
 }

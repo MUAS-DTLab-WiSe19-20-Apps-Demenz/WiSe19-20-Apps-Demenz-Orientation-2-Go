@@ -1,16 +1,1 @@
-<full-calendar
-#calendar
-defaultView="dayGridMonth"
-[header]="{
-  left: 'prev,next today',
-  center: 'title',
-  right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-}"
-[plugins]="calendarPlugins"
-[weekends]="calendarWeekends"
-[events]="calendarEvents"
-timeFormat = 'H(:mm)'
-(dateClick)="handleDateClick($event)"
-(eventClick)="eventClicked($event)"
-></full-calendar>
-<a routerLink="/home"> Go back</a>
+<div #calendar></div>

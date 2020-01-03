@@ -1,51 +1,71 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { EventInput } from '@fullcalendar/core';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGrigPlugin from '@fullcalendar/timegrid';
-import interactionPlugin from '@fullcalendar/interaction';
+import { ChangeDetectionStrategy, SimpleChanges, OnChanges, Component, OnInit, ViewChild, ElementRef, AfterViewInit, OnDestroy, Input, EventEmitter, Output } from '@angular/core';
+import { Appointment } from '../appointment.type';
+import $ from 'jquery';
+import 'fullcalendar';
 
 @Component({
   selector: 'app-calendar',
-  templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.css']
+  template: '<div #calendar></div>',
+  styleUrls: ['./calendar.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CalendarComponent implements OnInit {
+export class CalendarComponent implements AfterViewInit, OnDestroy, OnChanges {
+  @Input() viewModes = ['month', 'agendaWeek', 'agendaDay'];
+  @Input() navButtons = ['prev', 'next', 'today'];
+  @Input() appointments: Appointment[] = [];
+  @Output() requestNewAppointment = new EventEmitter<Appointment>();
+  @Output() requestUpdateAppointment = new EventEmitter<Appointment>();
+  @Output() appointmentUpdated = new EventEmitter<Appointment>();
+  @ViewChild('calendar', {static: true}) calendar: ElementRef;
+  constructor() { }
 
-  calendarPlugins = [dayGridPlugin, timeGrigPlugin, interactionPlugin];
-  calendarEvents = [
-    { title: 'event 1',
-    start:  '2020-01-01T14:30:00',
-    place: 'Lothstraße 64'}
-  ];
-  calendarActivated: any;
+  get $Instance(): any {
+    console.log("instance works!");
+    return $(this.calendar.nativeElement);
+  }
 
+  ngOnDestroy(): void {
+    this.$Instance.fullCalendar('destroy');
+  }
 
-  constructor(private route: ActivatedRoute,
-              private router: Router) {}
+  ngOnChanges(simpleChanges: SimpleChanges): void {
+    if (simpleChanges.appointments && simpleChanges.appointments.currentValue) {
+      this.updateAppointments();
+    }
+  }
 
-
-
-  handleDateClick(calDate) {
-    let route = this.router.config.find(r => r.path === 'addEvent');
-      this.router.navigateByUrl(`${'addEvent'}`);
-    console.log(calDate);
- }
-
- eventClicked(calDate) {
-  let route = this.router.config.find(r => r.path === 'changeEvent');
-  this.router.navigateByUrl(`${'changeEvent'}`);
-   console.log(calDate);
- }
-
- ngOnInit() {
-    this.route.data.subscribe((res) => {this.calendarActivated = res;
-    },
-    error => {
-      console.log('ERROR', error);
+  ngAfterViewInit(): void {
+    console.log("ngAfterViewInit works!");
+    this.$Instance.fullCalendar({
+      selectable: true,
+      editable: true,
+      eventSources: [{
+        events: this.appointments || [],
+      }],
+      header: {
+        left: this.navButtons.join(','),
+        center: 'title',
+        right: this.viewModes.join(',')
+      },
+      eventClick: (event: Appointment) => {
+        this.requestUpdateAppointment.emit(this.neutralize(event));
+      },
+      eventDrop: (event: Appointment, delta, revert) => {
+        this.appointmentUpdated.emit(this.neutralize(event));
+      }
     });
   }
 
+  private updateAppointments(): void {
+    // we have to do it this way, because other wise the plugin is dependent on the 
+    // reference of the event source. So we have to remove all event sources and add a new one
+    this.$Instance.fullCalendar('removeEventSources', this.$Instance.fullCalendar('getEventSources'));
+    this.$Instance.fullCalendar('addEventSource', { events: this.appointments });
+  }
 
-
+  private neutralize(event: Appointment): Appointment {
+    // the widget mutates the appointment in many ways. We can keep it consistent with this function
+    const { start, end, allDay, title, id } = event;
+    return { start, end, allDay, title, id };
+  }
 }
