@@ -29,7 +29,8 @@ export class HomeComponent {
   bringMeHome() {
     console.log("Bring_Me_Home-Button pressed!");
     let route = this.router.config.find(r => r.path === 'mapnavigation');
-    this.router.navigateByUrl(`${'mapnavigation'}`);
+    window.location.href = 'http://maps.google.com/maps?saddr=brighton&daddr=timbuktu';
+//    this.router.navigateByUrl(`${'mapnavigation'}`);
   }
 
   calendarClick() {
