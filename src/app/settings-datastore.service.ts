@@ -12,7 +12,7 @@ export class SettingsDatastoreService {
   radius: number = 500;
   timer: number = 30;
   checkInterval: number = 5;
-  contacts: Contact[];
+  contacts: Contact[] = [];
 
   constructor() {
     if(localStorage.getItem('checkInterval') == null){
