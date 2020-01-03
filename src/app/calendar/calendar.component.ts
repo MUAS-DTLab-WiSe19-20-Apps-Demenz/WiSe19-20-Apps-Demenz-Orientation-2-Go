@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, SimpleChanges, OnChanges, Component, OnInit, ViewChild, ElementRef, AfterViewInit, OnDestroy, Input, EventEmitter, Output } from '@angular/core';
 import { Appointment } from '../appointment.type';
 import $ from 'jquery';
+import moment from 'moment';
 import 'fullcalendar';
 
 @Component({
@@ -20,7 +21,6 @@ export class CalendarComponent implements AfterViewInit, OnDestroy, OnChanges {
   constructor() { }
 
   get $Instance(): any {
-    console.log("instance works!");
     return $(this.calendar.nativeElement);
   }
 
@@ -46,6 +46,9 @@ export class CalendarComponent implements AfterViewInit, OnDestroy, OnChanges {
         left: this.navButtons.join(','),
         center: 'title',
         right: this.viewModes.join(',')
+      },
+      select: (start: Date) => {
+        this.requestNewAppointment.emit(this.neutralize({ start: start}));
       },
       eventClick: (event: Appointment) => {
         this.requestUpdateAppointment.emit(this.neutralize(event));
