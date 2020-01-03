@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Address } from './address';
 import { Observable, of } from 'rxjs';
 import { Contact } from './contact';
-import { Router, ActivatedRoute } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
