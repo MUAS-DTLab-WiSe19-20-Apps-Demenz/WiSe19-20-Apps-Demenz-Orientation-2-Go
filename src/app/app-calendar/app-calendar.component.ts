@@ -10,13 +10,7 @@ export class AppCalendarComponent implements OnInit {
 
   isNew = null;
   appointmentDetail: Appointment;
-  appointments: Appointment[] = [
-    {
-      id: new Date().getTime().toString(),
-      title: 'event1',
-      start: new Date()
-    }
-  ];
+  appointments: Appointment[] = JSON.parse(localStorage.getItem('appointments'));
 
   constructor() { }
 
@@ -39,14 +33,33 @@ export class AppCalendarComponent implements OnInit {
   }
 
   onAdd(appointment: Appointment): void {
-    this.appointments = [...this.appointments, { id: new Date().getTime().toString(), ...appointment }];
+    console.log("add");
+    if(this.appointments != null){
+      this.appointments = [...this.appointments, { id: new Date().getTime().toString(), ...appointment }];
+    }
+    else{
+      this.appointments = [{ id: new Date().getTime().toString(), ...appointment }];
+    }
+    this.setLocalStorage();
+    this.onCloseAppointmentDetail();
+  }
+
+  onDelete(appointment: Appointment): void {
+    console.log("delete");
+    this.appointments = this.appointments.map(
+      a => a.id === appointment.id ? {} : a
+    );
+    this.clean();
+    this.setLocalStorage();
     this.onCloseAppointmentDetail();
   }
 
   onUpdate(appointment: Appointment): void {
+    console.log("update");
     this.appointments = this.appointments.map(
       a => a.id === appointment.id ? { ...a, ...appointment } : a
     );
+    this.setLocalStorage();
     this.onCloseAppointmentDetail();
   }
 
@@ -54,4 +67,15 @@ export class AppCalendarComponent implements OnInit {
     this.onUpdate(appointment);
   }
 
+  setLocalStorage(): void {
+    localStorage.setItem('appointments', JSON.stringify(this.appointments));
+    console.log(localStorage.getItem('appointments'));
+  }
+
+  clean(): void {
+    for(var index = 0; index < this.appointments.length; index++){
+      if(this.appointments[index].id === null || this.appointments[index].id === undefined)
+        this.appointments.splice(index, 1);
+    }
+  }
 }

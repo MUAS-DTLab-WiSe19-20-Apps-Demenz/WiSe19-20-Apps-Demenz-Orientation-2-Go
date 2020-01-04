@@ -17,6 +17,12 @@ export class SettingsDatastoreService {
   contacts: Contact[];
 
   constructor() {
+    if(localStorage.getItem('contacts') == null){
+      this.contacts = [];
+    }
+    else{
+      this.contacts = JSON.parse(localStorage.getItem('contacts'));
+    }
     if(localStorage.getItem('checkInterval') == null){
       localStorage.setItem('checkInterval', "5");
     }
@@ -89,6 +95,7 @@ export class SettingsDatastoreService {
 
   addContacts(con: Contact) : void {
     this.contacts.push(con);
+    localStorage.setItem('contacts', JSON.stringify(this.contacts));
   }
 
   removeContact(con: Contact) : void {
@@ -98,6 +105,7 @@ export class SettingsDatastoreService {
     console.log(index + " sollte entfernt werden");
 
     var hel = this.contacts.splice(0, 1);
+    localStorage.setItem('contacts', JSON.stringify(this.contacts));
   }
 
 }

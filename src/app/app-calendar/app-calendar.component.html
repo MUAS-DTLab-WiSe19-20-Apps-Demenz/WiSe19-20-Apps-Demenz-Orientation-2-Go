@@ -1,6 +1,4 @@
-<pre>
-    {{appointments|json}}
-    </pre>
+
     <app-calendar [appointments]="appointments" 
       (requestNewAppointment)="onRequestNewAppointment($event)"
       (requestUpdateAppointment)="onRequestUpdateAppointment($event)"
@@ -11,6 +9,7 @@
       [isNew]="isNew" 
       [appointment]="appointmentDetail" 
       (add)="onAdd($event)"
+      (delete)="onDelete($event)"
       (update)="onUpdate($event)"
       (close)="onCloseAppointmentDetail()">
     </app-appointment-detail>>

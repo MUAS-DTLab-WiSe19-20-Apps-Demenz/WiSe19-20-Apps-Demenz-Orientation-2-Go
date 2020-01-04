@@ -1,19 +1,19 @@
 import { ChangeDetectionStrategy, SimpleChanges, OnChanges, Component, OnInit, ViewChild, ElementRef, AfterViewInit, OnDestroy, Input, EventEmitter, Output } from '@angular/core';
 import { Appointment } from '../appointment.type';
+import { SettingsDatastoreService } from '../settings-datastore.service';
 import $ from 'jquery';
-import moment from 'moment';
 import 'fullcalendar';
 
 @Component({
   selector: 'app-calendar',
-  template: '<div #calendar></div>',
+  templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CalendarComponent implements AfterViewInit, OnDestroy, OnChanges {
   @Input() viewModes = ['month', 'agendaWeek', 'agendaDay'];
   @Input() navButtons = ['prev', 'next', 'today'];
-  @Input() appointments: Appointment[] = [];
+  @Input() appointments: Appointment[] = JSON.parse(localStorage.getItem('appointments'));
   @Output() requestNewAppointment = new EventEmitter<Appointment>();
   @Output() requestUpdateAppointment = new EventEmitter<Appointment>();
   @Output() appointmentUpdated = new EventEmitter<Appointment>();
@@ -35,7 +35,8 @@ export class CalendarComponent implements AfterViewInit, OnDestroy, OnChanges {
   }
 
   ngAfterViewInit(): void {
-    console.log("ngAfterViewInit works!");
+    //localStorage.removeItem('appointments');
+    console.log(localStorage.getItem('appointments'));
     this.$Instance.fullCalendar({
       selectable: true,
       editable: true,
@@ -47,6 +48,7 @@ export class CalendarComponent implements AfterViewInit, OnDestroy, OnChanges {
         center: 'title',
         right: this.viewModes.join(',')
       },
+      timezone: 'UTC',
       select: (start: Date) => {
         this.requestNewAppointment.emit(this.neutralize({ start: start}));
       },
@@ -68,7 +70,7 @@ export class CalendarComponent implements AfterViewInit, OnDestroy, OnChanges {
 
   private neutralize(event: Appointment): Appointment {
     // the widget mutates the appointment in many ways. We can keep it consistent with this function
-    const { start, end, allDay, title, id } = event;
-    return { start, end, allDay, title, id };
+    const { start, title, id } = event;
+    return { start, title, id };
   }
 }

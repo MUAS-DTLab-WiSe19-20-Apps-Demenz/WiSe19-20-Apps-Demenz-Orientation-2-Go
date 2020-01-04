@@ -3,35 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Appointment } from '../appointment.type';
 @Component({
   selector: 'app-appointment-detail',
-  template: `
-    <h2 *ngIf="!isNew">Edit event: '{{appointment?.title}}'</h2>
-    <h2 *ngIf="isNew">Create new event</h2>
-    <form [formGroup]="form">
-      <div class="form-group">
-        <label>Title:
-          <input type="text" formControlName="title"/>
-        </label>
-      </div>
-       <div class="form-group">
-        <label>Start date:
-          <input type="text" formControlName="start"/>
-        </label>
-      </div>
-       <div class="form-group">
-        <label>End date:
-          <input type="text" formControlName="end"/>
-        </label>
-      </div>
-      <div class="form-group">
-        <label>All day:
-          <input type="checkbox" formControlName="allDay"/>
-        </label>
-      </div>
-      <button type="submit" *ngIf="isNew" (click)="onAdd()">Add</button>
-      <button type="submit" *ngIf="!isNew" (click)="onUpdate()">Update</button>
-      <button type="button" (click)="close.emit()">Cancel</button>
-    </form>
-  `,
+  templateUrl: './appointment-detail.component.html',
   styleUrls: ['./appointment-detail.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -41,11 +13,12 @@ export class AppointmentDetailComponent implements OnChanges {
   @Output() close = new EventEmitter();
   @Output() add = new EventEmitter<Appointment>();
   @Output() update = new EventEmitter<Appointment>();
+  @Output() delete = new EventEmitter<Appointment>();
+
   form = this.formBuilder.group({
     title: [null, Validators.required],
-    allDay: [null],
     start: [],
-    end: []
+    place: []
   })
   constructor(private formBuilder: FormBuilder) { }
 
@@ -56,12 +29,17 @@ export class AppointmentDetailComponent implements OnChanges {
   }
 
   onAdd(): void {
-    const { end, start, title, allDay } = this.form.value;
-    this.add.emit({ end: end && new Date(end), start: start && new Date(start), title, allDay });
+    const {start, title, place} = this.form.value;
+    this.add.emit({start: start && new Date(start), title, place});
   }
 
   onUpdate(): void {
-    const { end, start, title, allDay, id } = this.form.value;
-    this.update.emit({ id: this.appointment.id, end: end && new Date(end), start: start && new Date(start), title, allDay });
+    const {start, title, id, place } = this.form.value;
+    this.update.emit({ id: this.appointment.id, start: start && new Date(start), title, place });
+  }
+
+  onDelete(): void {
+    const {start, title, id, place } = this.form.value;
+    this.delete.emit({ id: this.appointment.id, start: start && new Date(start), title, place });
   }
 }
