@@ -27,7 +27,7 @@
  	flex: 2; 
 	font-size:26px !important;
     	width:75% !important;
-	height: 10% !important;
+	height: 11% !important;
 
 }
 
@@ -35,7 +35,7 @@
 	position: absolute !important;
 	top: 15% !important;
 	left: 75% !important;
-  	transform: scale(1.5);
+  	transform: scale(1.1);
 }
 
 .HomeIcon{
