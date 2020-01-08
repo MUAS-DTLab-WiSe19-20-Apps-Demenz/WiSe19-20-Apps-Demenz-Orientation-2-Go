@@ -1,26 +1,22 @@
 
         
-<div fxLayout="column" fxLayoutGap="10px">
+<div fxLayout="column" fxLayoutGap="20px">
 
     <div class="title">
         <mat-toolbar color="primary">Neuen Kontakt hinzufügen</mat-toolbar>
-        <mat-card>Neuen Kontakt eingeben:</mat-card>
     </div>
   
-    <div fxLayout="column" class="NewContact" fxLayoutGap="10px">
+    <div fxLayout="row" class="NewContact" fxLayoutGap="0px">
         
-        <div>
             <mat-form-field>
-                <input matInput [(ngModel)]="name" placeholder="Name eingeben">
+                <input matInput [(ngModel)]="name" placeholder="Name">
              </mat-form-field>
-        </div>
+
+             <mat-form-field>
+                <input matInput [(ngModel)]="phone" placeholder="Telefonnummer">
+             </mat-form-field>
        
-        <div>
-            <mat-form-field>
-                <input matInput [(ngModel)]="phone" placeholder="Telefonnummer eingeben">
-             </mat-form-field>
-        </div>
-        
+
    </div>
 
 

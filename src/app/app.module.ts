@@ -37,6 +37,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select'
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -80,7 +81,8 @@ import {MatCardModule} from '@angular/material/card';
     MatFormFieldModule,
     MatSelectModule,
     MatSlideToggleModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
