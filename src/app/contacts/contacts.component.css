@@ -1,0 +1,21 @@
+.mat-raised-button{
+	width:90% !important;
+	left: 5% !important;
+	
+}
+
+.material-icons{
+	font-size: 70px;
+
+}
+
+.mat-subheader {
+    font-size: 24px;
+}
+
+.material-button-Remove{
+	position: absolute !important;
+	width:50% !important;
+	left: 50% !important;
+  	padding: 5px 0px 5px !important;
+}

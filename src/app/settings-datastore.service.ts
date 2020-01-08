@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Address } from './address';
 import { Observable, of } from 'rxjs';
 import { Contact } from './contact';
-import { Router, ActivatedRoute } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +12,7 @@ export class SettingsDatastoreService {
   radius: number = 500;
   timer: number = 30;
   checkInterval: number = 5;
-  contacts: Contact[];
+  contacts: Contact[] = [];
 
   constructor() {
     if(localStorage.getItem('checkInterval') == null){

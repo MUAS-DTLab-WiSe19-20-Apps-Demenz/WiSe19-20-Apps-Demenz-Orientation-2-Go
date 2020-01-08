@@ -1,26 +1,21 @@
-<div fxLayout="column" fxLayoutGap="100px">
-<!--   <div class="GoogleImages" fxLayout="row" fxLayout.xs="column"  fxLayoutGap="50px" fxLayoutAlign="center">
-    <input type="image" (click)="calendarClick()"  src="assets/Icons/home_icon.png" /> 
-    <input type="image" (click)="bringMeHome()" src="assets/Icons/calendar_icon.png" />
-    <input type="image" (click)="settingsClick()" src="assets/Icons/setting_icon.png" />
-  </div>    -->
+<div fxLayout="column" >
 
   <mat-toolbar color="primary">Orientierung 2 Go</mat-toolbar>
 
   <div class="Settings" >
     <a mat-icon-button class="Zahnrad" (click)="settingsClick()" aria-label="Settings"><mat-icon>settings</mat-icon></a>
-    <!-- <div><button mat-raised-button color="primary" (click)="settingsClick()" type="button"> Einstellungen</button></div>-->
+
   </div>
   
   <div class="Orientation">
-    <a mat-icon-button (click)="bringMeHome()" aria-label="Home"><mat-icon>home</mat-icon></a>
-    <div><button mat-raised-button color="primary" (click)="bringMeHome()" type="button"> Bring mich nach Hause</button></div> 
+    <a mat-icon-button class="HomeIcon"(click)="bringMeHome()" aria-label="Home"><mat-icon>home</mat-icon></a>
+    <div><button mat-raised-button class="BringMeHome" color="primary" (click)="bringMeHome()" type="button"> Bring mich nach Hause</button></div> 
 
   </div>
 
   <div class="Calendar" >
-    <a mat-icon-button (click)="calendarClick()" aria-label="Calendar"><mat-icon>calendar_today</mat-icon></a>
-    <div><button mat-raised-button color="primary" (click)="calendarClick()" type="button"> Kalender </button></div>
+    <a mat-icon-button class="CalendarIcon" (click)="calendarClick()" aria-label="Calendar"><mat-icon>calendar_today</mat-icon></a>
+    <div><button mat-raised-button  class="CalendarTab"color="primary" (click)="calendarClick()" type="button"> Kalender </button></div>
   
   </div>
 

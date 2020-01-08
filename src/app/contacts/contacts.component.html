@@ -1,15 +1,33 @@
-<h3>Kontakteinstellungen</h3>
 
-<ul class="contacts">
-        <li *ngFor="let contact of contacts"
-            [class.selected]="contact === selectedContact"
-            (click)="onSelect(contact)">
-            <span class="badge">{{contact.name}}</span> {{contact.phone}}
-            <button (click)="removeContact(contact)">Entfernen</button>
-        </li>
-      </ul>
+<div fxLayout="column" fxLayoutGap="10px">
 
-      <div><button (click)="newContact()">Kontakt hinzufügen</button></div>
-      <div><button (click)="goBack()">Zurück</button></div>
+  <div class="title">
 
-      <app-change-contact [con]="selectedContact"></app-change-contact>
+    <mat-toolbar color="primary">Kontakteinstellungen</mat-toolbar>
+
+    <mat-list>
+      <mat-card color="primary">Kontakte</mat-card>
+
+      <mat-list-item *ngFor="let contact of contacts" 
+      [class.selected]="contact === selectedContact"
+      (click)="onSelect(contact)">
+  
+        <mat-icon mat-list-icon>contacts</mat-icon>
+        <h4 mat-line>{{contact.name}}</h4>
+        <p mat-line> {{contact.phone}} </p>
+        <button mat-raised-button color="primary" class="material-button-Remove" (click)="removeContact(contact)">Kontakt entfernen</button>
+  
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-list>
+
+  </div>
+
+  <app-change-contact [con]="selectedContact"></app-change-contact>
+
+  <button mat-raised-button color="primary" (click)="newContact()">Kontakt hinzufügen</button>
+  <button mat-raised-button color="primary" (click)="goBack()">Zurück</button> 
+
+  
+  
+</div>

@@ -1,11 +1,33 @@
-<div *ngIf="con">
-    <label>Name ändern:
-        <input [(ngModel)]="con.name" placeholder="..."/>
-    </label></div><div *ngIf="con">
-    <label>Telefonnummer ändern:
-        <input [(ngModel)]="con.phone" placeholder="..."/>
-    </label>
-    <div><button (click)="save()">Speichern</button></div>
+
+<div *ngIf="con" fxLayout="column" fxLayoutGap="10px">
+
+    <div class="NameChange" fxLayout="column" fxLayoutGap="10px">
+        
+        <mat-card color="primary">Kontakt ändern:</mat-card>
+
+        <div class="mat-card-Contacts">
+
+            <mat-form-field>
+                <input matInput [(ngModel)]="con.name" placeholder="Name">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput [(ngModel)]="con.phone" placeholder="Telefonnummer">
+            </mat-form-field>
+
+        </div>
+
     </div>
+
+    <div>
+        <button mat-raised-button color="primary"  (click)="save()">Speichern</button>
+    </div>
+
+
+    <mat-divider></mat-divider>
+</div>
+    
+
+
 
    
