@@ -1,6 +1,8 @@
 import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { SettingsAuthenticationService } from '../settings-authentication.service';
+import { SettingsDatastoreService } from '../settings-datastore.service';
+import { Address } from '../address';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +14,8 @@ export class HomeComponent {
   ini: boolean;
 
   constructor(private router: Router,
-              private settingsAuth: SettingsAuthenticationService) { }
+              private settingsAuth: SettingsAuthenticationService,
+              private settingsDatastore: SettingsDatastoreService) { }
 
   settingsClick() {
     console.log(localStorage.getItem('password'));
@@ -31,7 +34,7 @@ export class HomeComponent {
     let route = this.router.config.find(r => r.path === 'mapnavigation');
     let destination = new Address;
     this.settingsDatastore.getAddress().subscribe(t => destination = t);
-    if(destination.housenumber == NaN){
+    if(Number.isNaN(destination.housenumber)){
       destination.street = 'Lothstraße';
       destination.housenumber = 40;
       destination.place = "München";
@@ -40,6 +43,7 @@ export class HomeComponent {
       + encodeURIComponent(destination.place + ', ' + destination.street + ' ' + destination.housenumber);
 //    this.router.navigateByUrl(`${'mapnavigation'}`);
   }
+
 
   calendarClick() {
     console.log("Calendar-Button pressed!");

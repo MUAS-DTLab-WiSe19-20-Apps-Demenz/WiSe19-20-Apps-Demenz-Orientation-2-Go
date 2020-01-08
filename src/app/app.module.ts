@@ -90,8 +90,8 @@ import { AppCalendarComponent } from './app-calendar/app-calendar.component';
     MatSelectModule,
     MatSlideToggleModule,
     MatCardModule,
-    FullCalendarModule
-    MatListModule
+    FullCalendarModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
