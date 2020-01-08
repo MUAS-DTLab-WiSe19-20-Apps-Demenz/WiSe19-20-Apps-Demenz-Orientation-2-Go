@@ -19,6 +19,7 @@ export class ChangePasswordComponent implements OnInit {
 
    setNewPassword(): void {
       this.securedsetting.setPassword(this.newPassword);
+      localStorage.clear();
   }
 
   goBack(): void {

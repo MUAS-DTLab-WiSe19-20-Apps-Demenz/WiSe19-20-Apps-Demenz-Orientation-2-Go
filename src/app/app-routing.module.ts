@@ -13,7 +13,7 @@ import { TimerComponent } from './timer/timer.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { HomeComponent } from './home/home.component';
-import { CalendarComponent } from './calendar/calendar.component';
+import { AppCalendarComponent } from './app-calendar/app-calendar.component';
 import { MapnavigationComponent } from './mapnavigation/mapnavigation.component';
 import { CreateNewContactComponent } from './create-new-contact/create-new-contact.component';
 
@@ -32,9 +32,9 @@ const routes: Routes = [
   { path: 'timer', component: TimerComponent},
   { path: 'navigation', component: NavigationComponent},
   { path: 'contacts', component: ContactsComponent},
-  { path: 'calendar', component: CalendarComponent},
+  { path: 'calendar', component: AppCalendarComponent},
   { path: 'mapnavigation', component: MapnavigationComponent},
-  { path: 'newContact', component: CreateNewContactComponent},
+  { path: 'newContact', component: CreateNewContactComponent}
   
 ];
 

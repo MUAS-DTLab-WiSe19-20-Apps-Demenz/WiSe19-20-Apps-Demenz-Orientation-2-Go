@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SettingsComponent } from './settings/settings.component';
@@ -39,6 +40,10 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { AppointmentDetailComponent } from './appointment-detail/appointment-detail.component';
+import { AppCalendarComponent } from './app-calendar/app-calendar.component';
+
 
 @NgModule({
   declarations: [
@@ -60,11 +65,14 @@ import {MatListModule} from '@angular/material/list';
     CalendarComponent,
     MapnavigationComponent,
     CreateNewContactComponent,
-    ChangeContactComponent
+    ChangeContactComponent,
+    AppointmentDetailComponent,
+    AppCalendarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
         { path: 'settings', component: SettingsComponent},
     ]),
@@ -82,6 +90,7 @@ import {MatListModule} from '@angular/material/list';
     MatSelectModule,
     MatSlideToggleModule,
     MatCardModule,
+    FullCalendarModule
     MatListModule
   ],
   providers: [],
