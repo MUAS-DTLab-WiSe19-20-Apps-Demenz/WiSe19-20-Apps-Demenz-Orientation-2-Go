@@ -38,6 +38,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select'
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
 
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { AppointmentDetailComponent } from './appointment-detail/appointment-detail.component';
@@ -90,6 +91,7 @@ import { AppCalendarComponent } from './app-calendar/app-calendar.component';
     MatSlideToggleModule,
     MatCardModule,
     FullCalendarModule
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

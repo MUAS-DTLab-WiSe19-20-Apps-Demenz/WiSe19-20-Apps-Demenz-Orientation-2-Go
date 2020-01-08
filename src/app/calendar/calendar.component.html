@@ -1,3 +1,6 @@
-
 <div #calendar ></div>
 
+<div *ngIf="calendarActivated">
+    <mat-toolbar color="primary">Kalender</mat-toolbar>
+    <button mat-raised-button color="primary" routerLink="/home">Go Back</button>
+</div>

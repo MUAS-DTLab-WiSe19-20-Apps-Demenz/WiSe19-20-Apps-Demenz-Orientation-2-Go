@@ -1,9 +1,27 @@
-<h3>Kontakte</h3>
-        <div>
-            <label>Neuen Kontakt eingeben:
-                <input [(ngModel)]="name" placeholder="Name eingeben"/>
-                <input [(ngModel)]="phone" placeholder="Telefonnummer eingeben"/>
-            </label>
-        </div>
-        <div><button (click)="addContact()">Speichern</button></div>
-        <div><button (click)="goBack()">Zurück</button></div>
+
+        
+<div fxLayout="column" fxLayoutGap="20px">
+
+    <div class="title">
+        <mat-toolbar color="primary">Neuen Kontakt hinzufügen</mat-toolbar>
+    </div>
+  
+    <div class="NewContact" >
+        
+            <mat-form-field>
+                <input matInput [(ngModel)]="name" placeholder="Name">
+             </mat-form-field>
+
+             <mat-form-field>
+                <input matInput [(ngModel)]="phone" placeholder="Telefonnummer">
+             </mat-form-field>
+
+   </div>
+
+   <div class="Fortfahren">
+        <button mat-raised-button color="primary" (click)="goBack()">Zurück</button>
+        <button mat-raised-button color="primary" (click)="addContact()">Speichern</button> 
+    </div>
+    
+  </div>
+  
