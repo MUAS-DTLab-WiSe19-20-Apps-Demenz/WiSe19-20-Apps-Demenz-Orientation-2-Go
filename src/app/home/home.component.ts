@@ -18,7 +18,7 @@ export class HomeComponent {
               private settingsDatastore: SettingsDatastoreService) { }
 
   settingsClick() {
-    console.log(localStorage.getItem('password'));
+    console.log("abfrage in home component" + localStorage.getItem('password'));
     if(this.ini) {
       let route = this.router.config.find(r => r.path === 'trueSettings');
       this.router.navigateByUrl(`${'trueSettings'}`);

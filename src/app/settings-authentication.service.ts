@@ -13,8 +13,9 @@ export class SettingsAuthenticationService {
   }
 
   setPassword(password: string): void {
+    console.log("übergen: " + password);
     localStorage.setItem('password', password);
-    console.log(localStorage.getItem('password'));
+    console.log("Passwort wurde geändertt:" + localStorage.getItem('password'));
     this.initial = false;
   }
 

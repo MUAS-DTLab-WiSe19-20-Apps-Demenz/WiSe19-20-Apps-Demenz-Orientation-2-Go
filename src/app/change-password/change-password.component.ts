@@ -10,6 +10,7 @@ import { Location } from '@angular/common';
 export class ChangePasswordComponent implements OnInit {
 
   @Input() newPassword : string;
+  changed: boolean;
   
 
   constructor(private securedsetting: SettingsAuthenticationService,
@@ -18,8 +19,9 @@ export class ChangePasswordComponent implements OnInit {
    }
 
    setNewPassword(): void {
-      this.securedsetting.setPassword(this.newPassword);
       localStorage.clear();
+      this.securedsetting.setPassword(this.newPassword);
+      this.changed = true;
   }
 
   goBack(): void {
@@ -28,7 +30,7 @@ export class ChangePasswordComponent implements OnInit {
 
   ngOnInit() {
     this.securedsetting.getPassword().subscribe(t => this.newPassword = t);
-  
+    this.changed = false;
   }
 
 }
