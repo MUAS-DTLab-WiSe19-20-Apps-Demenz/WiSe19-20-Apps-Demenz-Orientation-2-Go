@@ -1,6 +1,8 @@
-<div #calendar ></div>
+<mat-toolbar color="primary">Kalender</mat-toolbar>
 
-<div *ngIf="calendarActivated">
-    <mat-toolbar color="primary">Kalender</mat-toolbar>
+<div fxLayout="column" fxLayoutGap="40px">
+
+    <div #calendar></div>
     <button mat-raised-button color="primary" routerLink="/home">Go Back</button>
 </div>
+
