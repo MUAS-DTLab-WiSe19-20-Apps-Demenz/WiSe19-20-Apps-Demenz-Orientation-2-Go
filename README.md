@@ -1,15 +1,13 @@
-## Challenge Report zu "Orientation 2 Go" (??) [Name des Projekts/Titel ?] 
+## Challenge Report zu "Orientation 2 Go" 
 
 ### Projektkontext 
-Dieses Projekt wurde im Rahmen der Veranstaltung "Software Engineering I" im Wintersemester 2019/20 des Bachelorstudiengangs "Informatik" unter der Aufsicht von Prof. Dr. Kofler (und Prof. Dr. Socher ?) erstellt. Hierbei war die Alzheimer Gesellschaft München Partner des Projektes. Das Projekt entstand in Form einer sogenannten "Challenge" in Kollaboration mit dem DTLab der Hochschule Münche. Grundlegends Ziel  ist dabei Demenzbetroffenen oder auch Angehörigen den Alltag mittels technischen Möglichkeiten zu erleichtern.
+Dieses Projekt wurde im Rahmen der Veranstaltung "Software Engineering I" im Wintersemester 2019/20 des Bachelorstudiengangs "Informatik" unter der Aufsicht von Prof. Dr. Kofler erstellt. Hierbei war die Alzheimer Gesellschaft München Partner des Projektes. Das Projekt entstand in Form einer sogenannten "Challenge" in Kollaboration mit dem DTLab der Hochschule Münche. Grundlegendes Ziel  ist dabei Demenzbetroffenen oder auch Angehörigen den Alltag mittels technischen Möglichkeiten zu erleichtern.
 
 #### Alzheimer Gesellschaft München 
-Die Deutsche Alzheimer Gesellschaft e.V. Selbsthilfe Demenz (DAlzG) engagiert sich seit nun mehr als 30 Jahren für ein besseres Leben mit Demenz. Die Alzheimer Gesellschaft München ist dabei ein Ableger davon (glaub ich? :) ). Im Mittelpunkt für die Organisation steht hierbei Wissen über Demenz sowie Beratungs- und Unterstützungsangebote flächendeckend in Deutschland anzubieten. Neben der Aufklärungsarbeit ist die Unterstützung der Betroffenenen in Form von Hilfen zur Selbsthilfe wie auch Möglichkeiten zur Entlastung des Alltags von Angehörigen fundamental wichtig. Zusätzlich stellen sie die Anlaufstelle für ehrenamtliche Helfer dar, die sich besonders engagieren wollen für Menschen mit Demenz. Sei es durch soziale Projekte oder auch finanziell mittels Spenden.
+Die Deutsche Alzheimer Gesellschaft e.V. Selbsthilfe Demenz (DAlzG) engagiert sich seit nun mehr als 30 Jahren für ein besseres Leben mit Demenz. Die Alzheimer Gesellschaft München ist dabei ein Ableger davon. Im Mittelpunkt für die Organisation steht hierbei Wissen über Demenz sowie Beratungs- und Unterstützungsangebote flächendeckend in Deutschland anzubieten. Neben der Aufklärungsarbeit ist die Unterstützung der Betroffenenen in Form von Hilfen zur Selbsthilfe wie auch Möglichkeiten zur Entlastung des Alltags von Angehörigen fundamental wichtig. Zusätzlich stellen sie die Anlaufstelle für ehrenamtliche Helfer dar, die sich besonders engagieren wollen für Menschen mit Demenz. Sei es durch soziale Projekte oder auch finanziell mittels Spenden.
 <br>
 
 #### DTLab 
-// straight up copied von hm edu
-
 Das Digital Transformation Lab (DTLab) der Hochschule München in Kooperation mit Amazon Web Services...
 
 - organisiert curricular integrierte Praxisprojekte ("Challenges"), in denen Studierende an Problemen aus dem Bereich der Digitalisierung arbeiten, die von einer Institution des öffentlichen Sektors ("Partner") benannt wurden.
@@ -116,7 +114,7 @@ Neben der erwarteten Einarbeitungszeit in Angular floß auch einiges an Zeit in 
 
 
 ### Nächste Schritte 
-Das Projekt wird zunächst als Open Source veröffentlicht. Zukunftsnahe Richtungen für die Implementationen könnte beispielsweise das Geofencing sein, sodass die App im Hintergrund laufend mitbekommt, wenn man den gegebenen Radius verlässt und entsprechend ein Timer gestartet wird. Weiterhin sollte man noch daran arbeiten den Kalender etwas ansprechender zu gestalten, aber auch einige Features schön handhabbar für einen Betroffenen zu machen. Danach könnte man die Features verknüpfen, um alle Vorteile abschöpfen zu können, diese Features gesammelt in einer App zu haben.  
+Das Projekt wird zunächst als Open Source veröffentlicht. In der nahen Zukunft könnten beispielhafte Richtungen zur Weiterentwicklung das Geofencing sein, sodass die App im Hintergrund laufend mitbekommt, wenn man den gegebenen Radius verlässt und entsprechend ein Timer gestartet wird oder auch einfach der Kalender, aber auch andere Kleinigkeiten etwas ansprechender zu gestalten, sodass man einige Features auch schön handhabbar für einen Betroffenen macht. Danach könnte man diese Teilbereiche verknüpfen, um alle Vorteile abschöpfen zu können, diese Features gesammelt in einer App zu haben.  
 
 ### Zusammenfassung 
 In den vergangenen sechs Wochen Sprints wurde ein ordentliches Fundament für unsere Innovation kreiert. Über diesen Prototypen lässt sich nun gut über weitere Schritte reden und mögliche weitere Features anknüpfen. 
