@@ -118,4 +118,4 @@ Das Projekt wird zunächst als Open Source veröffentlicht. In der nahen Zukunft
 
 ### Zusammenfassung 
 In den vergangenen sechs Wochen Sprints wurde ein ordentliches Fundament für unsere Innovation kreiert. Über diesen Prototypen lässt sich nun gut über weitere Schritte reden und mögliche weitere Features anknüpfen. 
-Unser Team bestehend aus Manuel Eberhar, Daniel Soukup, Tobias Karius und Thorsten Schartel bedankt sich an dieser Stelle für diese Challenge, die Chance mit dem DTLab wie auch mit der Alzheimer Gesellschaft München zusammenzuarbeiten und an etwas arbeiten zu dürfen, was hoffentlich Menschen in der Zukunft helfen wird.
+Unser Team bestehend aus Manuel Eberhardt, Daniel Soukup, Tobias Karius und Thorsten Schartel bedankt sich an dieser Stelle für diese Challenge, die Chance mit dem DTLab wie auch mit der Alzheimer Gesellschaft München zusammenzuarbeiten und an etwas arbeiten zu dürfen, was hoffentlich Menschen in der Zukunft helfen wird.
